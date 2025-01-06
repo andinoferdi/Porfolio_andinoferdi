@@ -27,6 +27,7 @@ const Skills = () => {
   const [selectSkill, setSelectSkill] = useState(null);
   const [activeCategory, setActiveCategory] = useState("All");
   const [filteredSkills, setFilteredSkills] = useState(skills.skills_content);
+  const [animationClass, setAnimationClass] = useState("opacity-100");
 
   // Extract categories (ignore undefined categories)
   const categories = [
@@ -36,17 +37,23 @@ const Skills = () => {
     ),
   ];
 
-  // Filter data berdasarkan kategori
+  // Filter data berdasarkan kategori dengan animasi
   useEffect(() => {
-    if (activeCategory === "All") {
-      setFilteredSkills(skills.skills_content);
-    } else {
-      setFilteredSkills(
-        skills.skills_content.filter(
-          (skill) => skill.category === activeCategory
-        )
-      );
-    }
+    setAnimationClass("opacity-0 translate-y-5"); // Tambahkan kelas animasi keluar
+    const timeout = setTimeout(() => {
+      if (activeCategory === "All") {
+        setFilteredSkills(skills.skills_content);
+      } else {
+        setFilteredSkills(
+          skills.skills_content.filter(
+            (skill) => skill.category === activeCategory
+          )
+        );
+      }
+      setAnimationClass("opacity-100 translate-y-0"); // Tambahkan kelas animasi masuk
+    }, 300); // Durasi animasi keluar
+
+    return () => clearTimeout(timeout);
   }, [activeCategory, skills.skills_content]);
 
   // Re-inisialisasi AOS setiap kali data di-render ulang
@@ -166,7 +173,9 @@ const Skills = () => {
         </div>
 
         {/* Skills */}
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div
+          className={`flex flex-wrap gap-4 justify-center transition-all duration-500 ${animationClass}`}
+        >
           {filteredSkills.map((skill, i) => (
             <div
               key={i}
@@ -174,8 +183,8 @@ const Skills = () => {
               data-aos-duration="1200" // Tambahkan durasi yang sama
               data-aos-delay={i * 100}
               className="bg-white sm:cursor-pointer 
-      relative group w-full flex items-center
-      gap-5 p-5 max-w-sm rounded-md border-2 border-slate-200"
+              relative group w-full flex items-center
+              gap-5 p-5 max-w-sm rounded-md border-2 border-slate-200"
             >
               <div>
                 <img
