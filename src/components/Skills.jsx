@@ -11,10 +11,10 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     maxWidth: "23rem",
-    width: "90%",
+    width: "95%", // Responsif untuk ponsel
   },
   overlay: {
-    padding: "2rem",
+    padding: "1rem",
   },
 };
 Modal.setAppElement("#root");
@@ -49,7 +49,10 @@ const Skills = () => {
   }
 
   return (
-    <section className="min-h-fit bg-bg_light_primary relative" id="skills">
+    <section
+      className="min-h-fit bg-bg_light_primary relative overflow-hidden"
+      id="skills"
+    >
       {/* SVG Wave (Bagian Atas) */}
       <div className="custom-shape-divider-top-custom">
         <svg
@@ -107,20 +110,26 @@ const Skills = () => {
       </Modal>
 
       {/* Content */}
-      <div className="md:container px-5 py-14">
-        <h1 className="title" data-aos="fade-down">
+      <div className="w-full max-w-screen-lg mx-auto px-4 md:px-6 py-8">
+        <h1
+          className="text-center text-2xl md:text-3xl font-bold mb-4"
+          data-aos="fade-down"
+        >
           {skills.title}
         </h1>
-        <h6 className="subtitle" data-aos="fade-down">
+        <h6
+          className="text-center text-sm md:text-base text-gray-500 mb-6"
+          data-aos="fade-down"
+        >
           {skills.subtitle}
         </h6>
 
         {/* Categories */}
-        <div className="flex justify-center gap-4 py-4">
+        <div className="flex flex-wrap justify-center gap-4 py-4">
           {categories.map((category, index) => (
             <button
               key={index}
-              className={`relative px-6 py-2 rounded-lg border-2 transition-all duration-300 ease-in-out ${
+              className={`relative px-6 py-2 rounded-lg border-2 transition-all duration-300 ease-in-out min-w-[120px] ${
                 activeCategory === category
                   ? "border-red-500 bg-gradient-to-r from-red-500 via-black to-black text-white shadow-md scale-105"
                   : "border-gray-700 bg-gray-800 text-gray-300 hover:border-red-500 hover:text-white"
