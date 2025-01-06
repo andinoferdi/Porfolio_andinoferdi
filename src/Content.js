@@ -1,5 +1,5 @@
 // import images
-import Hero_person from "./assets/images/Hero/person.png";
+import Header_person from "./assets/images/Header/Foto.jpg";
 
 import figma from "./assets/images/Skills/figma.png";
 import sketch from "./assets/images/Skills/sketch.png";
@@ -57,20 +57,20 @@ export const content = {
     },
   ],
 
-  hero: {
+  header: {
     title: "Web Developer",
     firstName: "Andino",
     LastName: "Ferdiansah",
     btnText: "Hire Me",
-    image: Hero_person,
-    hero_content: [
+    image: Header_person,
+    header_content: [
       {
-        count: "8+",
+        count: "3+",
         text: "Years of Experinse in Web development",
       },
       {
-        count: "20+",
-        text: "Projects Worked in my career",
+        count: "5+",
+        text: "Projects Completed",
       },
     ],
   },
