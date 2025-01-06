@@ -66,6 +66,8 @@
   @apply w-3 h-3 bg-dark_primary;
 }
 
+/* CUSTOM */
+
 .custom-shape-divider-top-modern,
 .custom-shape-divider-bottom-modern {
   position: absolute;

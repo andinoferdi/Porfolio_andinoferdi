@@ -1,6 +1,8 @@
-import { createElement, useState } from "react";
+import { createElement, useState, useEffect } from "react";
 import { content } from "../Content";
 import Modal from "react-modal";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const customStyles = {
   content: {
@@ -24,6 +26,7 @@ const Skills = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectSkill, setSelectSkill] = useState(null);
   const [activeCategory, setActiveCategory] = useState("All");
+  const [filteredSkills, setFilteredSkills] = useState(skills.skills_content);
 
   // Extract categories (ignore undefined categories)
   const categories = [
@@ -33,12 +36,31 @@ const Skills = () => {
     ),
   ];
 
-  const filteredSkills =
-    activeCategory === "All"
-      ? skills.skills_content
-      : skills.skills_content.filter(
+  // Filter data berdasarkan kategori
+  useEffect(() => {
+    if (activeCategory === "All") {
+      setFilteredSkills(skills.skills_content);
+    } else {
+      setFilteredSkills(
+        skills.skills_content.filter(
           (skill) => skill.category === activeCategory
-        );
+        )
+      );
+    }
+  }, [activeCategory, skills.skills_content]);
+
+  // Re-inisialisasi AOS setiap kali data di-render ulang
+  useEffect(() => {
+    Aos.refresh();
+  }, [filteredSkills]);
+
+  // Inisialisasi AOS saat komponen pertama kali dimuat
+  useEffect(() => {
+    Aos.init({
+      duration: 1200, // Durasi default 1200ms
+      once: false, // Animasi berjalan setiap kali di-scroll
+    });
+  }, []);
 
   function openModal() {
     setIsOpen(true);
@@ -114,12 +136,14 @@ const Skills = () => {
         <h1
           className="text-center text-2xl md:text-3xl font-bold mb-4"
           data-aos="fade-down"
+          data-aos-duration="1200" // Tambahkan durasi
         >
           {skills.title}
         </h1>
         <h6
           className="text-center text-sm md:text-base text-gray-500 mb-6"
           data-aos="fade-down"
+          data-aos-duration="1200" // Tambahkan durasi
         >
           {skills.subtitle}
         </h6>
@@ -132,7 +156,7 @@ const Skills = () => {
               className={`relative px-6 py-2 rounded-lg border-2 transition-all duration-300 ease-in-out min-w-[120px] ${
                 activeCategory === category
                   ? "border-red-500 bg-gradient-to-r from-red-500 via-black to-black text-white shadow-md scale-105"
-                  : "border-gray-700 bg-gray-800 text-gray-300 hover:border-red-500 hover:text-white"
+                  : "border-gray-700 bg-gray-1200 text-gray-300 hover:border-red-500 hover:text-white"
               }`}
               onClick={() => setActiveCategory(category)}
             >
@@ -147,10 +171,11 @@ const Skills = () => {
             <div
               key={i}
               data-aos="fade-up"
-              data-aos-delay={i * 400}
+              data-aos-duration="1200" // Tambahkan durasi yang sama
+              data-aos-delay={i * 100}
               className="bg-white sm:cursor-pointer 
-              relative group w-full flex items-center
-              gap-5 p-5 max-w-sm rounded-md border-2 border-slate-200"
+      relative group w-full flex items-center
+      gap-5 p-5 max-w-sm rounded-md border-2 border-slate-200"
             >
               <div>
                 <img

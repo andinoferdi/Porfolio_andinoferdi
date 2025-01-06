@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { content } from "../Content";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Header = () => {
   const { header } = content;
@@ -57,7 +59,7 @@ const Header = () => {
           value: 80,
           density: {
             enable: true,
-            value_area: 800,
+            value_area: 1200,
           },
         },
         color: {
@@ -157,6 +159,13 @@ const Header = () => {
     });
   }, []);
 
+  useEffect(() => {
+    Aos.init({
+      duration: 1200, // Durasi animasi seragam untuk semua elemen
+      once: false, // Animasi berjalan setiap kali di-scroll
+    });
+  }, []);
+
   return (
     <section
       id="home"
@@ -174,6 +183,7 @@ const Header = () => {
         <div
           className="text-white flex flex-col justify-center items-center md:items-start px-6 md:mr-10 text-center md:text-left"
           data-aos="fade-down"
+          data-aos-duration="1200" // Tambahkan durasi
         >
           <h1
             className="font-Poppins text-4xl md:text-6xl font-bold text-red-600"
@@ -211,7 +221,7 @@ const Header = () => {
               <div
                 key={i}
                 data-aos="fade-down"
-                data-aos-delay={i * 300}
+                data-aos-duration="1200" // Tambahkan durasi
                 className="flex flex-col items-center md:items-start text-center md:text-left mb-6"
               >
                 <h3 className="text-white text-2xl md:text-3xl font-bold">
@@ -234,7 +244,8 @@ const Header = () => {
         >
           <img
             src={header.image}
-            data-aos="slide-up"
+            data-aos="fade-up"
+            data-aos-duration="1200" // Tambahkan durasi
             alt="..."
             className="rounded-full shadow-lg hover:scale-110 transition-transform duration-300 w-60 h-60 md:w-96 md:h-96 mb-8"
             style={{
