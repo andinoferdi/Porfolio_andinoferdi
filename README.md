@@ -38,7 +38,7 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek di lingkungan lokal Anda:
 
    ```bash
    git clone https://github.com/andinoferdi/Porfolio_andinoferdi.git
-   cd repository-name
+   cd Portfolio_andinoferdi
    ```
 
 2. **Instal Dependensi**
