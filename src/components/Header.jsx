@@ -187,9 +187,11 @@ const Header = () => {
           >
             {header.LastName}
           </h1>
-          <h4 className="font-Poppins text-lg md:text-2xl mt-4 text-gray-300">
+          <h4 className="font-Poppins text-lg md:text-2xl mt-4 text-red-600">
             {text}
+            <span className="typing-cursor">|</span>
           </h4>
+
           <br />
           <div className="flex justify-center md:justify-start">
             <a
