@@ -158,7 +158,10 @@ const Header = () => {
   }, []);
 
   return (
-    <section id="home" className="overflow-hidden relative">
+    <section
+      id="home"
+      className="overflow-hidden relative max-w-screen mx-auto"
+    >
       {/* Particles Container */}
       <div
         id="particles-js"
@@ -166,34 +169,33 @@ const Header = () => {
       ></div>
 
       {/* Konten Utama */}
-      {/* Wrapper untuk memastikan gambar sejajar dengan nama */}
-      <div className="min-h-[70vh] flex md:flex-row flex-col items-center justify-center relative">
+      <div className="min-h-[70vh] flex flex-col md:flex-row items-center justify-center relative px-4 md:px-6">
         {/* Kolom Kiri */}
         <div
-          className="text-white flex flex-col justify-center items-start px-6 md:mr-10"
+          className="text-white flex flex-col justify-center items-center md:items-start px-6 md:mr-10 text-center md:text-left"
           data-aos="fade-down"
         >
           <h1
-            className="font-Poppins text-6xl font-bold text-red-600"
+            className="font-Poppins text-4xl md:text-6xl font-bold text-red-600"
             style={{ textShadow: "0 0 25px white, 0 0 25px white" }}
           >
             {header.firstName}
           </h1>
           <h1
-            className="font-Poppins text-6xl font-bold text-white"
+            className="font-Poppins text-4xl md:text-6xl font-bold text-white"
             style={{ textShadow: "0 0 25px red, 0 0 25px white" }}
           >
             {header.LastName}
           </h1>
-          <h4 className="font-Poppins text-2xl mt-4 text-gray-300 text-white">
+          <h4 className="font-Poppins text-lg md:text-2xl mt-4 text-gray-300">
             {text}
           </h4>
           <br />
-          <div className="flex justify-start">
+          <div className="flex justify-center md:justify-start">
             <a
               href="/CV Andino Ferdiansah.docx"
               download="CV_Andino_Ferdiansah.docx"
-              className="btn flex items-center gap-2 text-black bg-white"
+              className="btn flex items-center gap-2 text-black bg-white px-4 py-2"
             >
               <FontAwesomeIcon
                 icon={faDownload}
@@ -202,18 +204,20 @@ const Header = () => {
               Download CV
             </a>
           </div>
-          <div className="flex flex-col gap-10 mt-10">
+          <div className="flex flex-col items-center md:items-start gap-10 mt-10">
             {header.header_content.map((content, i) => (
               <div
                 key={i}
                 data-aos="fade-down"
                 data-aos-delay={i * 300}
-                className={`flex items-center w-80 gap-5 ${
-                  i === 1 && "flex-row-reverse text-right"
-                }`}
+                className="flex flex-col items-center md:items-start text-center md:text-left mb-6"
               >
-                <h3 className="text-white">{content.count}</h3>
-                <p className="text-white">{content.text}</p>
+                <h3 className="text-white text-2xl md:text-3xl font-bold">
+                  {content.count}
+                </h3>
+                <p className="text-white text-sm md:text-base pb-4 md:pb-6">
+                  {content.text}
+                </p>
               </div>
             ))}
           </div>
@@ -230,11 +234,9 @@ const Header = () => {
             src={header.image}
             data-aos="slide-up"
             alt="..."
-            className="rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+            className="rounded-full shadow-lg hover:scale-110 transition-transform duration-300 w-60 h-60 md:w-96 md:h-96 mb-8"
             style={{
               boxShadow: "0 0 20px 5px rgba(255, 0, 0, 1)",
-              width: "400px",
-              height: "400px",
             }}
           />
         </div>
