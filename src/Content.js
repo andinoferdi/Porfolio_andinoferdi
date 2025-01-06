@@ -76,28 +76,50 @@ export const content = {
   },
 
   skills: {
-    title: "Skills",
-    subtitle: "MY TOP SKILLS",
+    title: "Knowledge",
+    subtitle: "These are the knowledge that I know",
     skills_content: [
       {
         name: "Figma",
         para: "Lorem ipsum text  dummy",
         logo: figma,
+        category: "Design Tools",
+      },
+      {
+        name: "Figma",
+        para: "Lorem ipsum text  dummy",
+        logo: figma,
+        category: "Design Tools",
+      },
+      {
+        name: "Figma",
+        para: "Lorem ipsum text  dummy",
+        logo: figma,
+        category: "Design Tools",
+      },
+      {
+        name: "Figma",
+        para: "Lorem ipsum text  dummy",
+        logo: figma,
+        category: "Design Tools",
       },
       {
         name: "Node js",
         para: "Lorem ipsum text  dummy",
         logo: nodejs,
+        category: "Frameworks",
       },
       {
         name: "Adobe Photoshop",
         para: "Lorem ipsum text  dummy",
         logo: ps,
+        category: "Design Tools",
       },
       {
         name: "React js",
         para: "Lorem ipsum text  dummy",
         logo: reactjs,
+        category: "Frameworks",
       },
       {
         name: "Sketch",
@@ -108,10 +130,12 @@ export const content = {
         name: "Python",
         para: "Lorem ipsum text  dummy",
         logo: python,
+        category: "Programming Languages",
       },
     ],
     icon: MdArrowForward,
   },
+
   services: {
     title: "Services",
     subtitle: "WHAT I OFFER",

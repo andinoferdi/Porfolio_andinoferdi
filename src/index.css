@@ -20,19 +20,22 @@
     @apply text-dark_primary;
   }
   h1 {
-    @apply font-Poppins lg:text-6xl text-3xl font-extrabold;
+    @apply font-Poppins lg:text-6xl text-4xl font-extrabold;
   }
   h2 {
-    @apply font-Poppins text-5xl font-bold;
+    @apply font-Poppins lg:text-5xl text-3xl font-bold;
   }
   h3 {
-    @apply font-Poppins text-5xl;
+    @apply font-Poppins lg:text-4xl text-2xl font-semibold;
   }
   h4 {
-    @apply md:text-4xl text-3xl !leading-relaxed font-Poppins;
+    @apply font-Poppins lg:text-3xl text-xl !leading-relaxed font-medium;
+  }
+  h5 {
+    @apply font-Poppins lg:text-2xl text-lg font-medium;
   }
   h6 {
-    @apply font-Poppins font-bold text-[#253D57] leading-8;
+    @apply font-Poppins lg:text-xl text-base font-bold text-[#253D57] leading-6;
   }
 
   p {
@@ -61,4 +64,25 @@
 }
 .swiper-pagination-bullet {
   @apply w-3 h-3 bg-dark_primary;
+}
+
+.custom-shape-divider-top-modern,
+.custom-shape-divider-bottom-modern {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-modern svg,
+.custom-shape-divider-bottom-modern svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 120px; /* Sesuaikan tinggi */
+}
+
+.custom-shape-divider-top-modern path,
+.custom-shape-divider-bottom-modern path {
+  fill: #d3d3d3; /* Warna abu-abu netral */
 }

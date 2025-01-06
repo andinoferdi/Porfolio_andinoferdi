@@ -166,16 +166,11 @@ const Header = () => {
       ></div>
 
       {/* Konten Utama */}
-      <div className="min-h-[70vh] relative flex md:flex-row flex-col-reverse md:items-end justify-center items-center">
-        <div
-          data-aos="slide-left"
-          data-aos-delay="1200"
-          className="absolute h-full md:w-4/12 w-8/12 top-0 right-0 bg-black bottom-0 -z-10"
-        ></div>
-
+      {/* Wrapper untuk memastikan gambar sejajar dengan nama */}
+      <div className="min-h-[70vh] flex md:flex-row flex-col items-center justify-center relative">
         {/* Kolom Kiri */}
         <div
-          className="pb-16 px-6 pt-5 md:mt-[-50px] text-white"
+          className="text-white flex flex-col justify-center items-start px-6 md:mr-10"
           data-aos="fade-down"
         >
           <h1
@@ -190,11 +185,11 @@ const Header = () => {
           >
             {header.LastName}
           </h1>
-          <h4 className="font-Poppins text-2xl mt-4 text-gray-300  text-white">
+          <h4 className="font-Poppins text-2xl mt-4 text-gray-300 text-white">
             {text}
           </h4>
           <br />
-          <div className="flex justify-end">
+          <div className="flex justify-start">
             <a
               href="/CV Andino Ferdiansah.docx"
               download="CV_Andino_Ferdiansah.docx"
@@ -222,18 +217,22 @@ const Header = () => {
               </div>
             ))}
           </div>
-          <div className="flex flex-col gap-10 mt-10"></div>
         </div>
 
         {/* Kolom Kanan */}
-        <div className="md:h-[30rem] h-80 flex items-center">
+        <div
+          className="flex items-center justify-center"
+          style={{
+            height: "100%",
+          }}
+        >
           <img
             src={header.image}
             data-aos="slide-up"
             alt="..."
-            className="h-full object-cover rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+            className="rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
             style={{
-              boxShadow: "0 0 20px 5px rgba(255, 255, 255, 0.8)",
+              boxShadow: "0 0 20px 5px rgba(255, 0, 0, 1)",
               width: "400px",
               height: "400px",
             }}
