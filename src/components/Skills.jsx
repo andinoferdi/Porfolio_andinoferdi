@@ -79,7 +79,7 @@ const Skills = () => {
 
   return (
     <section
-      className="min-h-fit bg-bg_light_primary relative overflow-hidden"
+      className="min-h-fit bg-white relative overflow-hidden" // Ganti background menjadi putih
       id="skills"
     >
       {/* SVG Wave (Bagian Atas) */}
@@ -90,7 +90,7 @@ const Skills = () => {
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
           style={{
-            filter: "drop-shadow(0 0 10px #FF0000)",
+            filter: "drop-shadow(0 0 10px #FF0000)", // Neon Effect
           }}
         >
           {/* Path Pertama: Abu-abu */}
@@ -119,7 +119,25 @@ const Skills = () => {
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
+        style={{
+          content: {
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            transform: "translate(-50%, -50%)",
+            maxWidth: "25rem",
+            width: "90%",
+            backgroundColor: "#F9F9F9", // Latar belakang abu-abu terang untuk modal
+            borderRadius: "8px",
+            border: "1px solid #ddd",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)", // Tambahkan bayangan halus
+          },
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.5)", // Overlay semi-transparan
+          },
+        }}
       >
         <div className="flex items-center gap-2">
           <img className="h-10" src={selectSkill?.logo} alt="..." />
@@ -131,7 +149,10 @@ const Skills = () => {
         </ul>
         <br />
         <div className="flex justify-end">
-          <button onClick={closeModal} className="btn">
+          <button
+            onClick={closeModal}
+            className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+          >
             Close
           </button>
         </div>
@@ -140,16 +161,16 @@ const Skills = () => {
       {/* Content */}
       <div className="w-full max-w-screen-lg mx-auto px-4 md:px-6 py-8">
         <h1
-          className="text-center text-2xl md:text-3xl font-bold mb-4"
+          className="text-center text-2xl md:text-3xl font-bold mb-4 text-gray-900" // Warna teks abu-abu gelap
           data-aos="fade-down"
-          data-aos-duration="1200" // Tambahkan durasi
+          data-aos-duration="1200"
         >
           {skills.title}
         </h1>
         <h6
-          className="text-center text-sm md:text-base text-gray-500 mb-6"
+          className="text-center text-sm md:text-base text-gray-600 mb-6" // Warna teks abu-abu
           data-aos="fade-down"
-          data-aos-duration="1200" // Tambahkan durasi
+          data-aos-duration="1200"
         >
           {skills.subtitle}
         </h6>
@@ -162,7 +183,7 @@ const Skills = () => {
               className={`relative px-6 py-2 rounded-lg border-2 transition-all duration-300 ease-in-out min-w-[120px] ${
                 activeCategory === category
                   ? "border-red-500 bg-gradient-to-r from-red-500 via-black to-black text-white shadow-md scale-105"
-                  : "border-gray-700 bg-gray-1200 text-gray-300 hover:border-red-500 hover:text-white"
+                  : "border-gray-300 bg-gray-100 text-gray-600 hover:border-red-500 hover:text-black"
               }`}
               onClick={() => setActiveCategory(category)}
             >
@@ -179,12 +200,17 @@ const Skills = () => {
             <div
               key={i}
               data-aos="fade-up"
-              data-aos-duration="1200" // Tambahkan durasi yang sama
+              data-aos-duration="1200"
               data-aos-delay={i * 100}
-              className="bg-white sm:cursor-pointer 
-              relative group w-full flex items-center
-              gap-5 p-5 max-w-sm rounded-md border-2 border-slate-200"
+              className="bg-gray-100 sm:cursor-pointer 
+                   relative group w-full flex items-center
+                   gap-5 p-5 max-w-sm rounded-md border-2 border-black shadow-none transition-all duration-300"
             >
+              {/* Neon Effect */}
+              <div
+                className="absolute inset-0 rounded-md border-2 border-transparent group-hover:border-red-500 opacity-0 group-hover:opacity-100 group-hover:shadow-[0_0_20px_#FF0000] transition-all duration-300"
+                aria-hidden="true"
+              ></div>
               <div>
                 <img
                   src={skill.logo}
@@ -193,8 +219,8 @@ const Skills = () => {
                 />
               </div>
               <div>
-                <h6>{skill.name}</h6>
-                <p className="italic">{skill.para}</p>
+                <h6 className="text-gray-900">{skill.name}</h6>
+                <p className="italic text-gray-600">{skill.para}</p>
                 <div
                   onClick={() => {
                     setSelectSkill(skill);
