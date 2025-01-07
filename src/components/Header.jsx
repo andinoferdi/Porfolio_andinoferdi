@@ -226,13 +226,14 @@ const Header = () => {
                 data-aos-duration="1200" // Tambahkan durasi
                 className="flex flex-col items-center md:items-start text-center md:text-left mb-4" // Kurangi margin-bottom
               >
-                <h3 className="text-white text-2xl md:text-3xl font-bold">
-                  {content.count}
-                </h3>
-                <p className="text-white text-sm md:text-base pb-2 md:pb-4">
-                  {" "}
-                  {/* Kurangi padding-bottom */}
-                  {content.text}
+                <p className="text-white text-sm md:text-base leading-relaxed">
+                  My name is Andino Ferdiansah. <br />
+                  I was born in Kediri on June 13, 2005. <br />
+                  Now I live in West Surabaya's Tandes District. <br />
+                  I am a newbie programmer, but I have an <br />
+                  interest in becoming a <br />
+                  professional programmer, <br />
+                  and I am ready to give my best.
                 </p>
               </div>
             ))}

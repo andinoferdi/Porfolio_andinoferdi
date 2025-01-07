@@ -77,16 +77,7 @@ export const content = {
     LastName: "Ferdiansah",
     btnText: "Hire Me",
     image: Header_person,
-    header_content: [
-      {
-        count: "3+",
-        text: "Years of Experinse in Web development",
-      },
-      {
-        count: "5+",
-        text: "Projects Completed",
-      },
-    ],
+    header_content: [{}],
   },
 
   skills: {
