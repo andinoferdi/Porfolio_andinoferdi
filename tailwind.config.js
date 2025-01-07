@@ -25,6 +25,9 @@ module.exports = {
       dropShadow: {
         primary: "-5px 35px 40px rgba(255, 0, 0, 0.9)", // Efek drop shadow merah
       },
+      boxShadow: {
+        neon: "0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4)",
+      },
     },
   },
   plugins: [],

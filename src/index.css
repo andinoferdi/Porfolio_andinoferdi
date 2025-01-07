@@ -150,3 +150,39 @@
 .ReactModal__Overlay--before-close {
   opacity: 0;
 }
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 0, 0, 0.6),
+      0 0 35px rgba(255, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 1), 0 0 50px rgba(255, 0, 0, 0.8),
+      0 0 75px rgba(255, 0, 0, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 0, 0, 0.6),
+      0 0 35px rgba(255, 0, 0, 0.4);
+  }
+}
+
+@keyframes neonGlow {
+  0% {
+    filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 15px #ff0000);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px #000000) drop-shadow(0 0 30px #333333);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 15px #ff0000);
+  }
+}
+
+.custom-shape-divider-top-custom svg {
+  animation: neonGlow 2s infinite; /* Animasi berjalan terus */
+}
+
+.custom-shape-divider-top-custom {
+  margin-top: -1px; /* Hilangkan garis putih */
+  position: relative;
+}

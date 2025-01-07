@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Particles from "./Particles";
 
 const Header = () => {
   const { header } = content;
@@ -53,113 +54,6 @@ const Header = () => {
   }, [charIndex, isDeleting, index, roles]);
 
   useEffect(() => {
-    window.particlesJS("particles-js", {
-      particles: {
-        number: {
-          value: 80,
-          density: {
-            enable: true,
-            value_area: 1200,
-          },
-        },
-        color: {
-          value: "#ffffff",
-        },
-        shape: {
-          type: "circle",
-          stroke: {
-            width: 0,
-            color: "#000000",
-          },
-          polygon: {
-            nb_sides: 5,
-          },
-        },
-        opacity: {
-          value: 0.5,
-          random: false,
-          anim: {
-            enable: false,
-            speed: 1,
-            opacity_min: 0.1,
-            sync: false,
-          },
-        },
-        size: {
-          value: 5,
-          random: true,
-          anim: {
-            enable: false,
-            speed: 40,
-            size_min: 0.1,
-            sync: false,
-          },
-        },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.4,
-          width: 1,
-        },
-        move: {
-          enable: true,
-          speed: 6,
-          direction: "none",
-          random: false,
-          straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: {
-            enable: false,
-            rotateX: 600,
-            rotateY: 1200,
-          },
-        },
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: {
-            enable: true,
-            mode: "repulse",
-          },
-          onclick: {
-            enable: true,
-            mode: "push",
-          },
-          resize: true,
-        },
-        modes: {
-          grab: {
-            distance: 400,
-            line_linked: {
-              opacity: 1,
-            },
-          },
-          bubble: {
-            distance: 400,
-            size: 40,
-            duration: 2,
-            opacity: 8,
-            speed: 3,
-          },
-          repulse: {
-            distance: 200,
-          },
-          push: {
-            particles_nb: 4,
-          },
-          remove: {
-            particles_nb: 2,
-          },
-        },
-      },
-      retina_detect: true,
-    });
-  }, []);
-
-  useEffect(() => {
     Aos.init({
       duration: 1200, // Durasi animasi seragam untuk semua elemen
       once: false, // Animasi berjalan setiap kali di-scroll
@@ -171,11 +65,8 @@ const Header = () => {
       id="home"
       className="overflow-hidden relative max-w-screen mx-auto"
     >
-      {/* Particles Container */}
-      <div
-        id="particles-js"
-        className="absolute top-0 left-0 w-full h-full z-0 bg-black"
-      ></div>
+      {/* Particles Component */}
+      <Particles />
 
       {/* Konten Utama */}
       <div className="min-h-[70vh] flex flex-col md:flex-row items-center justify-center relative px-4 md:px-6">
@@ -207,18 +98,17 @@ const Header = () => {
             <a
               href="/CV Andino Ferdiansah.docx"
               download="CV_Andino_Ferdiansah.docx"
-              className="btn flex items-center gap-2 text-black bg-white px-4 py-2"
+              className="btn flex items-center gap-2 text-black bg-white px-4 py-2 transition-all duration-300 ease-in-out hover:bg-red-600 hover:text-white hover:scale-105 shadow-neon"
             >
               <FontAwesomeIcon
                 icon={faDownload}
-                className="text-lg text-black"
+                className="text-lg transition-none"
               />
               Download CV
             </a>
           </div>
+
           <div className="flex flex-col items-center md:items-start gap-2 mt-10">
-            {" "}
-            {/* Kurangi gap */}
             {header.header_content.map((content, i) => (
               <div
                 key={i}
@@ -227,13 +117,19 @@ const Header = () => {
                 className="flex flex-col items-center md:items-start text-center md:text-left mb-4" // Kurangi margin-bottom
               >
                 <p className="text-white text-sm md:text-base leading-relaxed">
-                  My name is Andino Ferdiansah. <br />
-                  I was born in Kediri on June 13, 2005. <br />
-                  Now I live in West Surabaya's Tandes District. <br />
-                  I am a newbie programmer, but I have an <br />
-                  interest in becoming a <br />
-                  professional programmer, <br />
-                  and I am ready to give my best.
+                  My name is Andino Ferdiansah.
+                  <br />
+                  I was born in Kediri on June 13, 2005.
+                  <br />
+                  Now I live in West Surabaya's Tandes
+                  <br />
+                  District. I am a newbie programmer,
+                  <br />
+                  but I have an interest in becoming a
+                  <br />
+                  professional programmer, and I am
+                  <br />
+                  ready to give my best.
                 </p>
               </div>
             ))}
@@ -252,9 +148,9 @@ const Header = () => {
             data-aos="fade-up"
             data-aos-duration="1200" // Tambahkan durasi
             alt="..."
-            className="rounded-full shadow-lg hover:scale-110 transition-transform duration-300 w-60 h-60 md:w-96 md:h-96 mb-8"
+            className="rounded-full shadow-lg hover:scale-110 transition-transform duration-300 w-60 h-60 md:w-96 md:h-96 mb-8 animate-neonPulse"
             style={{
-              boxShadow: "0 0 20px 5px rgba(255, 0, 0, 1)",
+              animation: "neonPulse 2s infinite", // Pastikan animasi berjalan terus
             }}
           />
         </div>

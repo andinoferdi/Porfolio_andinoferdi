@@ -83,7 +83,13 @@ const Skills = () => {
       id="skills"
     >
       {/* SVG Wave (Bagian Atas) */}
-      <div className="custom-shape-divider-top-custom">
+      <div
+        className="custom-shape-divider-top-custom"
+        style={{
+          marginTop: "-1px", // Menghilangkan celah putih
+          position: "relative", // Pastikan posisi tetap
+        }}
+      >
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +110,7 @@ const Skills = () => {
           <path
             d="M0,0V20C30,40,70,60,120,70C180,90,260,70,340,50C420,30,510,10,590,30C670,50,760,80,850,95C940,110,1030,100,1120,85C1160,75,1200,60,1200,60V0Z"
             fill="#FF0000"
-            opacity="0.7"
+            opacity="0.9"
           ></path>
 
           {/* Path Ketiga: Hitam */}

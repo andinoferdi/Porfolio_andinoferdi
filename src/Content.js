@@ -8,14 +8,30 @@ import next from "/src/assets/images/Skills/next.png";
 import bootstrap from "/src/assets/images/Skills/bootstrap.png";
 import tailwind from "/src/assets/images/Skills/tailwind.png";
 import flutter from "/src/assets/images/Skills/flutter.png";
+import vite from "/src/assets/images/Skills/vite.png";
 import figma from "/src/assets/images/Skills/figma.png";
 import photoshop from "/src/assets/images/Skills/photoshop.png";
 import ilustrator from "/src/assets/images/Skills/ilustrator.png";
 import premiere from "/src/assets/images/Skills/premiere.png";
 import audition from "/src/assets/images/Skills/audition.png";
+import html from "/src/assets/images/Skills/html.png";
+import css from "/src/assets/images/Skills/css.png";
+import js from "/src/assets/images/Skills/js.png";
+import sass from "/src/assets/images/Skills/sass.png";
+import jquery from "/src/assets/images/Skills/jquery.png";
+import react from "/src/assets/images/Skills/react.png";
+import php from "/src/assets/images/Skills/php.png";
+import java from "/src/assets/images/Skills/java.png";
 import python from "/src/assets/images/Skills/python.png";
-import reactjs from "/src/assets/images/Skills/react.png";
-import nodejs from "/src/assets/images/Skills/node.png";
+import firebase from "/src/assets/images/Skills/firebase.png";
+import node from "/src/assets/images/Skills/node.png";
+import mysql from "/src/assets/images/Skills/mysql.png";
+import mariadb from "/src/assets/images/Skills/mariadb.png";
+import mongodb from "/src/assets/images/Skills/mongodb.png";
+import postgresql from "/src/assets/images/Skills/postgresql.png";
+import sqlite from "/src/assets/images/Skills/sqlite.png";
+import netlify from "/src/assets/images/Skills/netlify.png";
+import vercel from "/src/assets/images/Skills/vercel.png";
 
 // Services assets
 import services_logo1 from "/src/assets/images/Services/logo1.png";
@@ -127,6 +143,13 @@ export const content = {
         description: "lorem ipsum text dummy1",
       },
       {
+        name: "Vite js",
+        para: "Lorem ipsum text  dummy",
+        logo: vite,
+        category: "Frameworks",
+        description: "lorem ipsum text dummy1",
+      },
+      {
         name: "Figma",
         para: "Lorem ipsum text  dummy",
         logo: figma,
@@ -162,23 +185,128 @@ export const content = {
         description: "lorem ipsum text dummy1",
       },
       {
-        name: "Python",
+        name: "HTML",
         para: "Lorem ipsum text  dummy",
-        logo: python,
-        category: "Programming Languages",
+        logo: html,
+        category: "Frontend",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "CSS",
+        para: "Lorem ipsum text  dummy",
+        logo: css,
+        category: "Frontend",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Javascript",
+        para: "Lorem ipsum text  dummy",
+        logo: js,
+        category: "Frontend",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Sass",
+        para: "Lorem ipsum text  dummy",
+        logo: sass,
+        category: "Frontend",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Jquery",
+        para: "Lorem ipsum text  dummy",
+        logo: jquery,
+        category: "Frontend",
         description: "lorem ipsum text dummy1",
       },
       {
         name: "React js",
         para: "Lorem ipsum text  dummy",
-        logo: reactjs,
-        category: "Others",
+        logo: react,
+        category: "Frontend",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Php",
+        para: "Lorem ipsum text  dummy",
+        logo: php,
+        category: "Backend",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Java",
+        para: "Lorem ipsum text  dummy",
+        logo: java,
+        category: "Backend",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Python",
+        para: "Lorem ipsum text  dummy",
+        logo: python,
+        category: "Backend",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Firebase",
+        para: "Lorem ipsum text  dummy",
+        logo: firebase,
+        category: "Backend",
         description: "lorem ipsum text dummy1",
       },
       {
         name: "Node js",
         para: "Lorem ipsum text  dummy",
-        logo: nodejs,
+        logo: node,
+        category: "Backend",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "MySQL",
+        para: "Lorem ipsum text  dummy",
+        logo: mysql,
+        category: "Databases",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "MariaDB",
+        para: "Lorem ipsum text  dummy",
+        logo: mariadb,
+        category: "Databases",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "MongoDB",
+        para: "Lorem ipsum text  dummy",
+        logo: mongodb,
+        category: "Databases",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "PostgreSQL",
+        para: "Lorem ipsum text  dummy",
+        logo: postgresql,
+        category: "Databases",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "SQlite",
+        para: "Lorem ipsum text  dummy",
+        logo: sqlite,
+        category: "Databases",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Netlify",
+        para: "Lorem ipsum text  dummy",
+        logo: netlify,
+        category: "Others",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Vercel",
+        para: "Lorem ipsum text  dummy",
+        logo: vercel,
         category: "Others",
         description: "lorem ipsum text dummy1",
       },
