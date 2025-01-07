@@ -89,20 +89,28 @@ const Skills = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
+          style={{
+            filter: "drop-shadow(0 0 10px #FF0000)",
+          }}
         >
+          {/* Path Pertama: Abu-abu */}
           <path
             d="M0,0V40C40,55,90,75,150,65C210,55,290,25,380,35C470,45,570,90,660,105C750,120,840,100,930,80C1020,60,1110,40,1155,30L1200,20V0Z"
-            opacity=".2"
-            className="shape-fill"
+            fill="#B0B0B0"
+            opacity="1"
           ></path>
+
+          {/* Path Kedua: Merah */}
           <path
             d="M0,0V20C30,40,70,60,120,70C180,90,260,70,340,50C420,30,510,10,590,30C670,50,760,80,850,95C940,110,1030,100,1120,85C1160,75,1200,60,1200,60V0Z"
-            opacity=".4"
-            className="shape-fill"
+            fill="#FF0000"
+            opacity="0.7"
           ></path>
+
+          {/* Path Ketiga: Hitam */}
           <path
             d="M0,0V5C100,30,250,80,400,70C550,60,700,10,850,5C1000,0,1150,20,1200,30V0Z"
-            className="shape-fill"
+            fill="#000000"
           ></path>
         </svg>
       </div>
@@ -119,16 +127,7 @@ const Skills = () => {
         </div>
         <br />
         <ul className="list-decimal px-4 font-Poppins sm:text-sm text-xs !leading-7">
-          <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
-          <li>Lorem ipsum dolor sit, ame.</li>
-          <li>Lorem ipsum dolor sit, amet consectetur</li>
-          <li>
-            Lorem ipsum dolor sit, amet dolor sit, amet consectetur adipisicing.
-          </li>
-          <li>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad est
-            beatae quos rem.
-          </li>
+          <p className="italic">{selectSkill?.description}</p>
         </ul>
         <br />
         <div className="flex justify-end">

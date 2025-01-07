@@ -216,18 +216,22 @@ const Header = () => {
               Download CV
             </a>
           </div>
-          <div className="flex flex-col items-center md:items-start gap-10 mt-10">
+          <div className="flex flex-col items-center md:items-start gap-2 mt-10">
+            {" "}
+            {/* Kurangi gap */}
             {header.header_content.map((content, i) => (
               <div
                 key={i}
                 data-aos="fade-down"
                 data-aos-duration="1200" // Tambahkan durasi
-                className="flex flex-col items-center md:items-start text-center md:text-left mb-6"
+                className="flex flex-col items-center md:items-start text-center md:text-left mb-4" // Kurangi margin-bottom
               >
                 <h3 className="text-white text-2xl md:text-3xl font-bold">
                   {content.count}
                 </h3>
-                <p className="text-white text-sm md:text-base pb-4 md:pb-6">
+                <p className="text-white text-sm md:text-base pb-2 md:pb-4">
+                  {" "}
+                  {/* Kurangi padding-bottom */}
                   {content.text}
                 </p>
               </div>

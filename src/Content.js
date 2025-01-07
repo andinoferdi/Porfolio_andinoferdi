@@ -2,12 +2,20 @@
 import Header_person from "/src/assets/images/Header/Foto.jpg";
 
 // Skills assets
+import laravel from "/src/assets/images/Skills/laravel.png";
+import vue from "/src/assets/images/Skills/vue.png";
+import next from "/src/assets/images/Skills/next.png";
+import bootstrap from "/src/assets/images/Skills/bootstrap.png";
+import tailwind from "/src/assets/images/Skills/tailwind.png";
+import flutter from "/src/assets/images/Skills/flutter.png";
 import figma from "/src/assets/images/Skills/figma.png";
-import sketch from "/src/assets/images/Skills/sketch.png";
-import ps from "/src/assets/images/Skills/ps.png";
+import photoshop from "/src/assets/images/Skills/photoshop.png";
+import ilustrator from "/src/assets/images/Skills/ilustrator.png";
+import premiere from "/src/assets/images/Skills/premiere.png";
+import audition from "/src/assets/images/Skills/audition.png";
+import python from "/src/assets/images/Skills/python.png";
 import reactjs from "/src/assets/images/Skills/react.png";
 import nodejs from "/src/assets/images/Skills/node.png";
-import python from "/src/assets/images/Skills/python.png";
 
 // Services assets
 import services_logo1 from "/src/assets/images/Services/logo1.png";
@@ -86,57 +94,102 @@ export const content = {
     subtitle: "These are the knowledge that I know",
     skills_content: [
       {
-        name: "Figma",
+        name: "Laravel",
         para: "Lorem ipsum text  dummy",
-        logo: figma,
-        category: "Design Tools",
-      },
-      {
-        name: "Figma",
-        para: "Lorem ipsum text  dummy",
-        logo: figma,
-        category: "Design Tools",
-      },
-      {
-        name: "Figma",
-        para: "Lorem ipsum text  dummy",
-        logo: figma,
-        category: "Design Tools",
-      },
-      {
-        name: "Figma",
-        para: "Lorem ipsum text  dummy",
-        logo: figma,
-        category: "Design Tools",
-      },
-      {
-        name: "Node js",
-        para: "Lorem ipsum text  dummy",
-        logo: nodejs,
+        logo: laravel,
         category: "Frameworks",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Vue js",
+        para: "Lorem ipsum text  dummy",
+        logo: vue,
+        category: "Frameworks",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Next js",
+        para: "Lorem ipsum text  dummy",
+        logo: next,
+        category: "Frameworks",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Boootstrap",
+        para: "Lorem ipsum text  dummy",
+        logo: bootstrap,
+        category: "Frameworks",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Tailwind",
+        para: "Lorem ipsum text  dummy",
+        logo: tailwind,
+        category: "Frameworks",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Flutter",
+        para: "Lorem ipsum text  dummy",
+        logo: flutter,
+        category: "Frameworks",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Figma",
+        para: "Lorem ipsum text  dummy",
+        logo: figma,
+        category: "Design Tools",
+        description: "lorem ipsum text dummy1",
       },
       {
         name: "Adobe Photoshop",
         para: "Lorem ipsum text  dummy",
-        logo: ps,
+        logo: photoshop,
         category: "Design Tools",
+        description: "lorem ipsum text dummy1",
       },
       {
-        name: "React js",
+        name: "Adobe Ilustrator",
         para: "Lorem ipsum text  dummy",
-        logo: reactjs,
-        category: "Frameworks",
+        logo: ilustrator,
+        category: "Design Tools",
+        description: "lorem ipsum text dummy1",
       },
       {
-        name: "Sketch",
+        name: "Adobe Premiere Pro",
         para: "Lorem ipsum text  dummy",
-        logo: sketch,
+        logo: premiere,
+        category: "Design Tools",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Adobe Audition",
+        para: "Lorem ipsum text  dummy",
+        logo: audition,
+        category: "Design Tools",
+        description: "lorem ipsum text dummy1",
       },
       {
         name: "Python",
         para: "Lorem ipsum text  dummy",
         logo: python,
         category: "Programming Languages",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "React js",
+        para: "Lorem ipsum text  dummy",
+        logo: reactjs,
+        category: "Others",
+        description: "lorem ipsum text dummy1",
+      },
+      {
+        name: "Node js",
+        para: "Lorem ipsum text  dummy",
+        logo: nodejs,
+        category: "Others",
+        description: "lorem ipsum text dummy1",
       },
     ],
     icon: MdArrowForward,
