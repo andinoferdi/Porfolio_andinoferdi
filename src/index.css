@@ -220,3 +220,41 @@
     transform: rotate(360deg);
   }
 }
+
+.custom-shape-divider-top-modern svg,
+.custom-shape-divider-bottom-modern svg {
+  width: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 1rem; /* Tambahkan padding untuk memastikan konten tidak menempel di tepi */
+  margin: auto; /* Untuk membuat kontainer berada di tengah */
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Sesuaikan ukuran font */
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  overflow-x: hidden;
+}
