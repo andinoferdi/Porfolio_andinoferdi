@@ -335,7 +335,7 @@ img {
 
 @media screen and (max-width: 480px) {
   img {
-    max-width: 90%; /* Kurangi ukuran untuk perangkat kecil */
+    max-width: 100%;
   }
 }
 
