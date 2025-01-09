@@ -13,13 +13,15 @@ import "aos/dist/aos.css";
 const App = () => {
   useEffect(() => {
     Aos.init({
-      duration: 1800,
+      duration: 1200,
       offset: 100,
-      disable: "mobile",
+      once: true,
+      disable: false,
     });
   }, []);
+
   return (
-    <div className="">
+    <div className="min-h-screen">
       <Navbar />
       <Header />
       <Skills />
@@ -28,8 +30,9 @@ const App = () => {
       <Testimonials />
       <Hireme />
       <Contact />
-      <footer className="p-3 text-center">
-        <h6 className="mb-3">Andino Ferdiansah</h6>
+
+      <footer className="p-3 text-center bg-gray-900 text-gray-300">
+        <h6 className="mb-3 font-bold">Andino Ferdiansah</h6>
         <p>codeaprogram © All CopyRights Reserved 2022</p>
       </footer>
     </div>

@@ -74,7 +74,7 @@ const Header = () => {
         <div
           className="text-white flex flex-col justify-center items-center md:items-start px-6 md:mr-10 text-center md:text-left"
           data-aos="fade-down"
-          data-aos-duration="1200" // Tambahkan durasi
+          // Tambahkan durasi
         >
           <h1
             className="font-Poppins text-4xl md:text-6xl font-bold text-red-600"
@@ -113,7 +113,7 @@ const Header = () => {
               <div
                 key={i}
                 data-aos="fade-down"
-                data-aos-duration="1200" // Tambahkan durasi
+                // Tambahkan durasi
                 className="flex flex-col items-center md:items-start text-center md:text-left mb-4" // Kurangi margin-bottom
               >
                 <p className="text-white text-sm md:text-base leading-relaxed">
@@ -146,7 +146,7 @@ const Header = () => {
           <img
             src={header.image}
             data-aos="fade-up"
-            data-aos-duration="1200" // Tambahkan durasi
+            // Tambahkan durasi
             alt="..."
             className="rounded-full shadow-lg hover:scale-110 transition-transform duration-300 w-60 h-60 md:w-96 md:h-96 mb-8 animate-neonPulse"
             style={{

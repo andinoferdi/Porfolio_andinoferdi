@@ -169,20 +169,21 @@ const Skills = () => {
         <h1
           className="text-center text-2xl md:text-3xl font-bold mb-4 text-gray-900" // Warna teks abu-abu gelap
           data-aos="fade-down"
-          data-aos-duration="1200"
         >
           {skills.title}
         </h1>
         <h6
           className="text-center text-sm md:text-base text-gray-600 mb-6" // Warna teks abu-abu
           data-aos="fade-down"
-          data-aos-duration="1200"
         >
           {skills.subtitle}
         </h6>
 
         {/* Categories */}
-        <div className="flex flex-wrap justify-center gap-4 py-4">
+        <div
+          className="flex flex-wrap justify-center gap-4 py-4"
+          data-aos="fade-down"
+        >
           {categories.map((category, index) => (
             <button
               key={index}
@@ -206,7 +207,6 @@ const Skills = () => {
             <div
               key={i}
               data-aos="fade-up"
-              data-aos-duration="1200"
               data-aos-delay={i * 100}
               className="bg-gray-100 sm:cursor-pointer 
                    relative group w-full flex items-center
