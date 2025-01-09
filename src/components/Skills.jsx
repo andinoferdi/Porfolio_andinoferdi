@@ -1,22 +1,8 @@
 import { createElement, useState, useEffect } from "react";
 import { content } from "../Content";
 import Modal from "react-modal";
+import Divider from "./Divider";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    maxWidth: "23rem",
-    width: "95%",
-  },
-  overlay: {
-    padding: "1rem",
-  },
-};
 Modal.setAppElement("#root");
 
 const Skills = () => {
@@ -26,6 +12,7 @@ const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [filteredSkills, setFilteredSkills] = useState(skills.skills_content);
   const [animationClass, setAnimationClass] = useState("opacity-100");
+  const [modalAnimation, setModalAnimation] = useState("fade-in");
 
   const categories = [
     "All",
@@ -54,10 +41,15 @@ const Skills = () => {
 
   function openModal() {
     setIsOpen(true);
+    setModalAnimation("fade-in");
   }
 
   function closeModal() {
-    setIsOpen(false);
+    setModalAnimation("fade-out");
+    setTimeout(() => {
+      setIsOpen(false);
+      setModalAnimation("fade-in");
+    }, 300);
   }
 
   return (
@@ -65,45 +57,7 @@ const Skills = () => {
       className="min-h-fit bg-white relative overflow-hidden"
       id="skills"
     >
-      {/* SVG Wave (Bagian Atas) */}
-      <div
-        className="custom-shape-divider-top-custom"
-        style={{
-          marginTop: "-1px", // Menghilangkan celah putih
-          position: "relative", // Pastikan posisi tetap
-        }}
-      >
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          style={{
-            filter: "drop-shadow(0 0 10px #FF0000)", // Neon Effect
-          }}
-        >
-          {/* Path Pertama: Abu-abu */}
-          <path
-            d="M0,0V40C40,55,90,75,150,65C210,55,290,25,380,35C470,45,570,90,660,105C750,120,840,100,930,80C1020,60,1110,40,1155,30L1200,20V0Z"
-            fill="#B0B0B0"
-            opacity="1"
-          ></path>
-
-          {/* Path Kedua: Merah */}
-          <path
-            d="M0,0V20C30,40,70,60,120,70C180,90,260,70,340,50C420,30,510,10,590,30C670,50,760,80,850,95C940,110,1030,100,1120,85C1160,75,1200,60,1200,60V0Z"
-            fill="#FF0000"
-            opacity="0.9"
-          ></path>
-
-          {/* Path Ketiga: Hitam */}
-          <path
-            d="M0,0V5C100,30,250,80,400,70C550,60,700,10,850,5C1000,0,1150,20,1200,30V0Z"
-            fill="#000000"
-          ></path>
-        </svg>
-      </div>
-
+      <Divider />
       {/* Modal */}
       <Modal
         isOpen={modalIsOpen}
@@ -118,13 +72,15 @@ const Skills = () => {
             transform: "translate(-50%, -50%)",
             maxWidth: "25rem",
             width: "90%",
-            backgroundColor: "#F9F9F9", // Latar belakang abu-abu terang untuk modal
+            backgroundColor: "#F9F9F9",
             borderRadius: "8px",
             border: "1px solid #ddd",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)", // Tambahkan bayangan halus
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+            opacity: modalAnimation === "fade-out" ? "0" : "1",
+            transition: "opacity 300ms ease-out",
           },
           overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Overlay semi-transparan
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
           },
         }}
       >
@@ -150,13 +106,13 @@ const Skills = () => {
       {/* Content */}
       <div className="w-full max-w-screen-lg mx-auto px-4 md:px-6 py-8">
         <h1
-          className="text-center text-2xl md:text-3xl font-bold mb-4 text-gray-900" // Warna teks abu-abu gelap
+          className="text-center text-2xl md:text-3xl font-bold mb-4 text-gray-900"
           data-aos="fade-down"
         >
           {skills.title}
         </h1>
         <h6
-          className="text-center text-sm md:text-base text-gray-600 mb-6" // Warna teks abu-abu
+          className="text-center text-sm md:text-base text-gray-600 mb-6"
           data-aos="fade-down"
         >
           {skills.subtitle}
