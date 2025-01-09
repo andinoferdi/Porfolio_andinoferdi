@@ -62,7 +62,7 @@ const Skills = () => {
 
   return (
     <section
-      className="min-h-fit bg-white relative overflow-hidden" // Ganti background menjadi putih
+      className="min-h-fit bg-white relative overflow-hidden"
       id="skills"
     >
       {/* SVG Wave (Bagian Atas) */}

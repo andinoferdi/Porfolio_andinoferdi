@@ -81,7 +81,8 @@
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 120px; /* Sesuaikan tinggi */
+  height: 120px;
+  width: 100%;
 }
 
 .custom-shape-divider-top-modern path,
@@ -221,11 +222,6 @@
   }
 }
 
-.custom-shape-divider-top-modern svg,
-.custom-shape-divider-bottom-modern svg {
-  width: 100%;
-}
-
 html,
 body {
   width: 100%;
@@ -236,13 +232,13 @@ body {
 
 .container {
   max-width: 100%;
-  padding: 0 1rem; /* Tambahkan padding untuk memastikan konten tidak menempel di tepi */
-  margin: auto; /* Untuk membuat kontainer berada di tengah */
+  padding: 0 1rem;
+  margin: auto;
 }
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 2rem; /* Sesuaikan ukuran font */
+    font-size: 2rem;
   }
   h2 {
     font-size: 1.8rem;
@@ -255,6 +251,137 @@ img {
   display: block;
 }
 
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  .btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+  .container {
+    padding: 0 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.flex-item {
+  flex: 1 1 100%; /* Default ukuran 100% pada layar kecil */
+}
+
+@media screen and (min-width: 768px) {
+  .flex-item {
+    flex: 1 1 calc(50% - 1rem); /* Dua kolom pada tablet */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .flex-item {
+    flex: 1 1 calc(33.333% - 1rem); /* Tiga kolom pada desktop */
+  }
+}
+
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr; /* Satu kolom pada layar kecil */
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom pada tablet */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr); /* Tiga kolom pada desktop */
+  }
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem; /* Jika ingin sudut gambar melengkung */
+}
+
+@media screen and (max-width: 480px) {
+  img {
+    max-width: 90%; /* Kurangi ukuran untuk perangkat kecil */
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* Sembunyikan pada perangkat kecil */
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+
 body {
-  overflow-x: hidden;
+  font-size: 1rem; /* Base font-size */
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.1rem;
+  }
 }
