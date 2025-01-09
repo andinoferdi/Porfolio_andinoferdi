@@ -1,8 +1,6 @@
 import { createElement, useState, useEffect } from "react";
 import { content } from "../Content";
 import Modal from "react-modal";
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 const customStyles = {
   content: {
@@ -13,7 +11,7 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
     maxWidth: "23rem",
-    width: "95%", // Responsif untuk ponsel
+    width: "95%",
   },
   overlay: {
     padding: "1rem",
@@ -29,7 +27,6 @@ const Skills = () => {
   const [filteredSkills, setFilteredSkills] = useState(skills.skills_content);
   const [animationClass, setAnimationClass] = useState("opacity-100");
 
-  // Extract categories (ignore undefined categories)
   const categories = [
     "All",
     ...new Set(
@@ -37,9 +34,8 @@ const Skills = () => {
     ),
   ];
 
-  // Filter data berdasarkan kategori dengan animasi
   useEffect(() => {
-    setAnimationClass("opacity-0 translate-y-5"); // Tambahkan kelas animasi keluar
+    setAnimationClass("opacity-0 translate-y-5");
     const timeout = setTimeout(() => {
       if (activeCategory === "All") {
         setFilteredSkills(skills.skills_content);
@@ -50,24 +46,11 @@ const Skills = () => {
           )
         );
       }
-      setAnimationClass("opacity-100 translate-y-0"); // Tambahkan kelas animasi masuk
-    }, 300); // Durasi animasi keluar
+      setAnimationClass("opacity-100 translate-y-0");
+    }, 300);
 
     return () => clearTimeout(timeout);
   }, [activeCategory, skills.skills_content]);
-
-  // Re-inisialisasi AOS setiap kali data di-render ulang
-  useEffect(() => {
-    Aos.refresh();
-  }, [filteredSkills]);
-
-  // Inisialisasi AOS saat komponen pertama kali dimuat
-  useEffect(() => {
-    Aos.init({
-      duration: 1200, // Durasi default 1200ms
-      once: false, // Animasi berjalan setiap kali di-scroll
-    });
-  }, []);
 
   function openModal() {
     setIsOpen(true);
@@ -207,7 +190,6 @@ const Skills = () => {
             <div
               key={i}
               data-aos="fade-up"
-              data-aos-delay={i * 100}
               className="bg-gray-100 sm:cursor-pointer 
                    relative group w-full flex items-center
                    gap-5 p-5 max-w-sm rounded-md border-2 border-black shadow-none transition-all duration-300"

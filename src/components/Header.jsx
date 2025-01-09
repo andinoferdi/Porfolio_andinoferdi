@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { content } from "../Content";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import Particles from "./Particles";
 
 const Header = () => {
@@ -52,13 +50,6 @@ const Header = () => {
 
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, index, roles]);
-
-  useEffect(() => {
-    Aos.init({
-      duration: 1200, // Durasi animasi seragam untuk semua elemen
-      once: false, // Animasi berjalan setiap kali di-scroll
-    });
-  }, []);
 
   return (
     <section
