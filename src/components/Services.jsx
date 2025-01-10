@@ -25,8 +25,12 @@ const Services = () => {
             <div
               key={i}
               data-aos="fade-up"
-              className="min-w-[14rem] duration-300 cursor-pointer border-2 border-gray-300 rounded-xl text-center bg-white p-6 flex-1 group-hover:blur-sm hover:!blur-none shadow-md hover:shadow-lg"
+              className="relative min-w-[14rem] duration-300 cursor-pointer border-2 border-gray-300 rounded-xl text-center bg-white p-6 flex-1 shadow-md hover:shadow-lg transition-all group-hover:blur-[1px] hover:!blur-none"
             >
+              <div
+                className="absolute inset-0 rounded-xl border-2 border-transparent hover:border-red-500 opacity-0 hover:opacity-100 hover:shadow-[0_0_20px_#FF0000] transition-all duration-300"
+                aria-hidden="true"
+              ></div>
               <img src={content.logo} alt="..." className="mx-auto" />
               <h6 className="my-3 text-gray-900 font-semibold">
                 {content.title}
