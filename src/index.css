@@ -202,51 +202,6 @@
     transform: translateY(0);
   }
 }
-
-/* Loader yang lebih elegan */
-.loader {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #ff0000; /* Warna animasi */
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  animation: spin 1.5s linear infinite, color-change 2s ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 0, 0, 0.4),
-    0 0 60px rgba(255, 0, 0, 0.2);
-}
-
-/* Animasi berputar */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Animasi perubahan warna (gradient) */
-@keyframes color-change {
-  0% {
-    border-top-color: #ff0000;
-  }
-  50% {
-    border-top-color: #000000;
-  }
-  70% {
-    border-top-color: #ff0000;
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 html,
 body {
   width: 100%;

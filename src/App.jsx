@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Navbar from "./Layouts/Navbar";
@@ -11,8 +11,6 @@ import Hireme from "./components/Hireme";
 import Contact from "./components/Contact";
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     Aos.init({
       duration: 1200,
@@ -21,19 +19,19 @@ const App = () => {
       disable: false,
     });
 
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
+    const preloader = document.getElementById("preloader");
+    const duration = 1300;
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen bg-gray-900">
-        <div className="loader"></div>
-      </div>
-    );
-  }
+    if (preloader) {
+      setTimeout(() => {
+        preloader.style.opacity = "0";
+        preloader.style.transition = "opacity 0.5s ease-out";
+        setTimeout(() => {
+          preloader.remove();
+        }, 500);
+      }, duration);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen">
