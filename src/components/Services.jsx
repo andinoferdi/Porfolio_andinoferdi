@@ -7,12 +7,18 @@ const Services = () => {
       {" "}
       {/* Background abu-abu */}
       <div className="md:container px-5">
-        <h2 className="title text-gray-900" data-aos="fade-down">
+        <h1
+          className="text-center text-2xl md:text-3xl font-bold mb-4 text-gray-900"
+          data-aos="fade-down"
+        >
           {services.title}
-        </h2>
-        <h4 className="subtitle text-gray-600" data-aos="fade-down">
+        </h1>
+        <h6
+          className="text-center text-sm md:text-base text-gray-600 mb-6"
+          data-aos="fade-down"
+        >
           {services.subtitle}
-        </h4>
+        </h6>
         <br />
         <div className="flex gap-5 justify-between flex-wrap group">
           {services.service_content.map((content, i) => (

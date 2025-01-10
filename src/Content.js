@@ -41,9 +41,14 @@ import netlify from "/src/assets/images/Skills/netlify.png";
 import vercel from "/src/assets/images/Skills/vercel.png";
 
 // Services assets
-import services_logo1 from "/src/assets/images/Services/logo1.png";
-import services_logo2 from "/src/assets/images/Services/logo2.png";
-import services_logo3 from "/src/assets/images/Services/logo3.png";
+import services_logo1 from "/src/assets/images/Services/frontend.gif";
+import services_logo2 from "/src/assets/images/Services/backend.gif";
+import services_logo3 from "/src/assets/images/Services/fullstack.gif";
+import services_logo4 from "/src/assets/images/Services/uiux.gif";
+import services_logo5 from "/src/assets/images/Services/audio.gif";
+import services_logo6 from "/src/assets/images/Services/database.gif";
+import services_logo7 from "/src/assets/images/Services/api.gif";
+import services_logo8 from "/src/assets/images/Services/video.gif";
 
 // Projects assets
 import project1 from "/src/assets/images/Projects/img1.png";
@@ -410,25 +415,51 @@ export const content = {
 
   services: {
     title: "Services",
-    subtitle: "WHAT I OFFER",
+    subtitle: "These are the services that I can offer",
     service_content: [
       {
-        title: "Web Development",
-        para: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document elying on mean",
+        title: "Front-End Development",
+        para: "Building visually appealing and responsive interfaces using modern technologies such as HTML, CSS, JavaScript, and frameworks like React.",
         logo: services_logo1,
       },
       {
-        title: "ui / ux DESIGNING",
-        para: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document elying on mean",
+        title: "Back-End Development",
+        para: "Creating efficient server-side systems, implementing APIs, and managing databases using frameworks like Laravel and Node.js.",
         logo: services_logo2,
       },
       {
-        title: "PhotoShop Editing",
-        para: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document elying on mean",
+        title: "Full-Stack Development",
+        para: "Combining front-end and back-end expertise to build seamless and complete web applications.",
         logo: services_logo3,
+      },
+      {
+        title: "UI/UX Designing",
+        para: "Designing user-friendly interfaces and delivering enjoyable user experiences with a focus on both aesthetics and functionality.",
+        logo: services_logo4,
+      },
+      {
+        title: "Audio Editing",
+        para: "Editing and enhancing audio tracks for podcasts, videos, and other multimedia projects using tools like Audacity and Adobe Audition.",
+        logo: services_logo5,
+      },
+      {
+        title: "Database Management",
+        para: "Designing, managing, and optimizing databases to ensure efficient and reliable data storage solutions.",
+        logo: services_logo6,
+      },
+      {
+        title: "API Integration",
+        para: "Integrating third-party APIs to enhance application functionality, including payment systems and user authentication.",
+        logo: services_logo7,
+      },
+      {
+        title: "Video Editing",
+        para: "Editing and enhancing video content for various platforms, including YouTube, social media, and multimedia projects, using tools like Adobe Premiere Pro and Final Cut Pro.",
+        logo: services_logo8,
       },
     ],
   },
+
   Projects: {
     title: "Projects",
     subtitle: "MY CREATION",
