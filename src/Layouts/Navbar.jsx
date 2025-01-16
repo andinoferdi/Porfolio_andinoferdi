@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { content } from "../Content";
 import { HiMenuAlt2, HiX } from "react-icons/hi";
 import { createElement } from "react";
@@ -7,6 +7,27 @@ const Navbar = () => {
   const { nav } = content;
   const [showMenu, setShowMenu] = useState(false);
   const [active, setActive] = useState(0);
+
+  // Fungsi untuk mendeteksi elemen yang sedang di viewport
+  const handleScroll = () => {
+    nav.forEach((item, i) => {
+      const section = document.querySelector(item.link); // Misalnya #home, #about, dll.
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= -50 && rect.top <= window.innerHeight / 2) {
+          setActive(i);
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    // Tambahkan event listener saat komponen dimount
+    window.addEventListener("scroll", handleScroll);
+
+    // Hapus event listener saat komponen unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="w-full flex justify-center">
@@ -30,7 +51,6 @@ const Navbar = () => {
         {nav.map((item, i) => (
           <a
             href={item.link}
-            onClick={() => setActive(i)}
             key={i} // Pastikan untuk memberikan `key` agar tidak ada error React
             className={`text-xl p-2.5 rounded-full sm:cursor-pointer transition-all duration-300 ${
               i === active && "bg-dark_primary text-white"

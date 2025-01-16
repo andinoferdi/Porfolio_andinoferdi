@@ -1,26 +1,30 @@
 import { content } from "../Content";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
 import { Pagination } from "swiper";
+import Particles from "./Particles";
 
 const Projects = () => {
   const { Projects } = content;
   return (
-    <section className="bg-bg_light_primary" id="projects">
-      <div className="md:container px-5 pt-14 min-h-screen flex flex-col justify-between">
-        <div>
-          <h2 className="title" data-aos="fade-down">
+    <section className="relative bg-bg_light_primary" id="projects">
+      {/* Tambahkan Particles */}
+      <div className="md:container px-5 pt-14 min-h-screen flex flex-col justify-between relative z-10">
+        <div className="text-center">
+          {/* Align title and subtitle to the center */}
+          <h1
+            className="text-center text-2xl md:text-3xl font-bold mb-4 text-gray-900"
+            data-aos="fade-down"
+          >
             {Projects.title}
-          </h2>
-          <h4 className="subtitle" data-aos="fade-down">
+          </h1>
+          <h6
+            className="text-center text-sm md:text-base text-gray-600 mb-6"
+            data-aos="fade-down"
+          >
             {Projects.subtitle}
-          </h4>
-          <br />
+          </h6>
         </div>
         <div className="flex items-center lg:flex-row flex-col-reverse gap-5">
           <img
