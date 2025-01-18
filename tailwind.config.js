@@ -16,17 +16,17 @@ module.exports = {
         dark_primary: "#000000", // Hitam sebagai warna utama
         bg_light_primary: "#E5E5E5", // Warna background
         gray: "#808080", // Warna abu-abu
-        red_primary: "#FF0000", // Warna merah untuk nuansa utama
-        red_secondary: "#FF4D4D", // Warna merah lebih terang untuk aksen
+        black_primary: "#000000", // Warna hitam untuk menggantikan merah utama
+        black_secondary: "#4D4D4D", // Warna hitam lebih terang untuk aksen
       },
       backgroundImage: {
-        primaryLinear: "linear-gradient(180deg, #FF0000 0%, #990000 100%)", // Gradasi merah
+        primaryLinear: "linear-gradient(180deg, #000000 0%, #4D4D4D 100%)", // Gradasi hitam
       },
       dropShadow: {
-        primary: "-5px 35px 40px rgba(255, 0, 0, 0.9)", // Efek drop shadow merah
+        primary: "-5px 35px 40px rgba(0, 0, 0, 0.9)", // Efek drop shadow hitam
       },
       boxShadow: {
-        neon: "0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4)",
+        neon: "0 0 5px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 0, 0, 0.4)", // Efek neon hitam
       },
     },
   },

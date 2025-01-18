@@ -30,9 +30,10 @@ const Services = () => {
               className="relative border-2 border-white rounded-xl text-center p-6 shadow-md hover:shadow-lg transition-all"
             >
               <div
-                className="absolute inset-0 rounded-xl border-2 border-transparent hover:border-red-500 opacity-0 hover:opacity-100 hover:shadow-[0_0_20px_#FF0000] transition-all duration-300"
+                className="absolute inset-0 rounded-xl border-2 border-transparent hover:border-purple-500 opacity-0 hover:opacity-100 hover:shadow-[0_0_20px_#8000FF] transition-all duration-300"
                 aria-hidden="true"
               ></div>
+
               <img src={content.logo} alt="..." className="mx-auto" />
               <h6 className="my-3 text-white font-semibold">{content.title}</h6>
               <p className="leading-7 text-white">{content.para}</p>

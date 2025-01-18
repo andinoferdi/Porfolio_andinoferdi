@@ -62,18 +62,18 @@ const Header = () => {
           data-aos="fade-down"
         >
           <h1
-            className="font-Poppins text-3xl sm:text-4xl md:text-6xl font-bold text-red-600"
-            style={{ textShadow: "0 0 25px white, 0 0 25px white" }}
+            className="font-Poppins text-3xl sm:text-4xl md:text-6xl font-bold text-purple-500"
+            style={{ textShadow: "0 0 25px purple, 0 0 25px white" }}
           >
             {header.firstName}
           </h1>
           <h1
             className="font-Poppins text-3xl sm:text-4xl md:text-6xl font-bold text-white"
-            style={{ textShadow: "0 0 25px red, 0 0 25px white" }}
+            style={{ textShadow: "0 0 25px purple, 0 0 25px white" }}
           >
             {header.LastName}
           </h1>
-          <h4 className="font-Poppins text-lg md:text-2xl mt-4 text-red-600">
+          <h4 className="font-Poppins text-lg md:text-2xl mt-4 text-purple-500">
             {text}
             <span className="typing-cursor">|</span>
           </h4>
@@ -83,7 +83,7 @@ const Header = () => {
             <a
               href="/CV Andino Ferdiansah.docx"
               download="CV_Andino_Ferdiansah.docx"
-              className="btn flex items-center gap-2 text-black bg-white px-3 py-2 sm:px-4 transition-all duration-300 ease-in-out hover:bg-red-600 hover:text-white hover:scale-105 shadow-neon"
+              className="btn flex items-center gap-2 text-black bg-white px-3 py-2 sm:px-4 transition-all duration-300 ease-in-out hover:bg-purple-600 hover:text-white hover:scale-105 shadow-neon"
             >
               <FontAwesomeIcon
                 icon={faDownload}
@@ -130,11 +130,10 @@ const Header = () => {
           <img
             src={header.image}
             data-aos="fade-up"
-            // Tambahkan durasi
             alt="..."
             className="rounded-full shadow-lg hover:scale-110 transition-transform duration-300 w-48 sm:w-60 h-48 sm:h-60 md:w-96 md:h-96 mb-12 animate-neonPulse"
             style={{
-              animation: "neonPulse 2s infinite", // Pastikan animasi berjalan terus
+              animation: "neonPulse 2s infinite",
             }}
           />
         </div>

@@ -24,14 +24,14 @@
 
       .loader {
         border: 8px solid #f3f3f3;
-        border-top: 8px solid #ff0000;
+        border-top: 8px solid #8000ff;
         border-radius: 50%;
         width: 100px;
         height: 100px;
         animation: spin 1.5s linear infinite,
           color-change 2s ease-in-out infinite;
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 0, 0, 0.4),
-          0 0 60px rgba(255, 0, 0, 0.2);
+        box-shadow: 0 0 20px rgba(128, 0, 255, 0.6),
+          0 0 40px rgba(128, 0, 255, 0.4), 0 0 60px rgba(128, 0, 255, 0.2);
       }
 
       @keyframes spin {
@@ -45,13 +45,13 @@
 
       @keyframes color-change {
         0% {
-          border-top-color: #ff0000;
+          border-top-color: #8000ff;
         }
         50% {
           border-top-color: #000000;
         }
         70% {
-          border-top-color: #ff0000;
+          border-top-color: #8000ff;
         }
       }
     </style>

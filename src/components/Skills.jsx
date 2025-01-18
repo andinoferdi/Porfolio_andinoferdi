@@ -10,13 +10,12 @@ const Skills = () => {
   const { skills } = content;
   const [modalIsOpen, setIsOpen] = useState(false);
   const [selectSkill, setSelectSkill] = useState(null);
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Frameworks");
   const [filteredSkills, setFilteredSkills] = useState(skills.skills_content);
   const [animationClass, setAnimationClass] = useState("opacity-100");
   const [modalAnimation, setModalAnimation] = useState("fade-in");
 
   const categories = [
-    "All",
     ...new Set(
       skills.skills_content.map((skill) => skill.category).filter(Boolean)
     ),
@@ -25,14 +24,14 @@ const Skills = () => {
   useEffect(() => {
     setAnimationClass("opacity-0 translate-y-5");
     const timeout = setTimeout(() => {
-      if (activeCategory === "All") {
-        setFilteredSkills(skills.skills_content);
-      } else {
+      if (activeCategory) {
         setFilteredSkills(
           skills.skills_content.filter(
             (skill) => skill.category === activeCategory
           )
         );
+      } else {
+        setFilteredSkills(skills.skills_content);
       }
       setAnimationClass("opacity-100 translate-y-0");
     }, 300);
@@ -73,7 +72,6 @@ const Skills = () => {
             backgroundColor: "#F9F9F9",
             borderRadius: "8px",
             border: "1px solid #ddd",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
             opacity: modalAnimation === "fade-out" ? "0" : "1",
             transition: "opacity 300ms ease-out",
           },
@@ -94,7 +92,7 @@ const Skills = () => {
         <div className="flex justify-end">
           <button
             onClick={closeModal}
-            className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+            className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600"
           >
             Close
           </button>
@@ -134,8 +132,8 @@ const Skills = () => {
               key={index}
               className={`relative px-6 py-2 rounded-lg border-2 transition-all duration-300 ease-in-out min-w-[120px] bg-white ${
                 activeCategory === category
-                  ? "border-red-500 bg-gradient-to-r from-red-500 via-black to-black text-white shadow-md scale-105"
-                  : "border-gray-300 bg-gray-100 text-gray-600 hover:border-red-500 hover:text-black"
+                  ? "border-purple-500 bg-gradient-to-r from-purple-500 via-black to-black text-white shadow-md scale-105"
+                  : "border-gray-300 bg-gray-100 text-gray-600 hover:border-purple-500 hover:text-black"
               }`}
               onClick={() => setActiveCategory(category)}
             >
@@ -158,9 +156,10 @@ const Skills = () => {
             >
               {/* Neon Effect */}
               <div
-                className="absolute inset-0 rounded-md border-2 border-transparent group-hover:border-red-500 opacity-0 group-hover:opacity-100 group-hover:shadow-[0_0_20px_#FF0000] transition-all duration-300"
+                className="absolute inset-0 rounded-md border-2 border-transparent group-hover:border-purple-500 opacity-0 group-hover:opacity-100 group-hover:shadow-[0_0_20px_#8000FF] transition-all duration-300"
                 aria-hidden="true"
               ></div>
+
               <div>
                 <img
                   src={skill.logo}
