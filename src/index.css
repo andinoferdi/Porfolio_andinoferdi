@@ -109,8 +109,9 @@
   display: inline-block;
   margin-left: 2px;
   width: 2px;
-  background-color: white;
+  background-color: white; /* Pipe putih */
   animation: blink 1s infinite;
+  color: transparent; /* Pastikan teks warna tidak terlihat */
 }
 
 @keyframes blink {
