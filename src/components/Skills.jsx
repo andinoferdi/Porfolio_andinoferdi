@@ -2,6 +2,7 @@ import { createElement, useState, useEffect } from "react";
 import { content } from "../Content";
 import Modal from "react-modal";
 import Divider from "./Divider";
+import Particles from "./Particles";
 
 Modal.setAppElement("#root");
 
@@ -53,11 +54,8 @@ const Skills = () => {
   }
 
   return (
-    <section
-      className="min-h-fit bg-white relative overflow-hidden"
-      id="skills"
-    >
-      <Divider />
+    <section className="min-h-fit relative overflow-hidden" id="skills">
+      {/* <Divider /> */}
       {/* Modal */}
       <Modal
         isOpen={modalIsOpen}
@@ -104,7 +102,7 @@ const Skills = () => {
       </Modal>
 
       {/* Content */}
-      <div className="w-full max-w-screen-lg mx-auto px-4 md:px-6 py-8">
+      <div className="w-full max-w-screen-lg mx-auto px-4 md:px-6 py-8 mt-[20rem]">
         <h1
           className="text-center text-2xl md:text-3xl font-bold mb-4 text-gray-900"
           data-aos="fade-down"
@@ -126,7 +124,7 @@ const Skills = () => {
           {categories.map((category, index) => (
             <button
               key={index}
-              className={`relative px-6 py-2 rounded-lg border-2 transition-all duration-300 ease-in-out min-w-[120px] ${
+              className={`relative px-6 py-2 rounded-lg border-2 transition-all duration-300 ease-in-out min-w-[120px] bg-white ${
                 activeCategory === category
                   ? "border-red-500 bg-gradient-to-r from-red-500 via-black to-black text-white shadow-md scale-105"
                   : "border-gray-300 bg-gray-100 text-gray-600 hover:border-red-500 hover:text-black"
@@ -146,7 +144,7 @@ const Skills = () => {
             <div
               key={i}
               data-aos="fade-up"
-              className="bg-gray-100 sm:cursor-pointer 
+              className="bg-white sm:cursor-pointer 
                    relative group w-full flex items-center
                    gap-5 p-5 max-w-sm rounded-md border-2 border-black shadow-none transition-all duration-300"
             >

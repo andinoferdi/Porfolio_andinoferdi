@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 
-const Particles = () => {
+const Particles = ({ id }) => {
   useEffect(() => {
-    window.particlesJS("particles-js", {
+    window.particlesJS(id, {
       particles: {
         number: {
           value: 80,
@@ -109,10 +109,7 @@ const Particles = () => {
   }, []);
 
   return (
-    <div
-      id="particles-js"
-      className="absolute top-0 left-0 w-full h-full z-0 bg-black"
-    ></div>
+    <div id={id} className="absolute top-0 left-0 w-full h-full z-0"></div>
   );
 };
 

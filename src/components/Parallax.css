@@ -1,0 +1,28 @@
+.wrapper {
+  position: relative;
+}
+
+.parallax,
+.parallax svg {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+}
+
+/* MARK: ---0-490 Mobile */
+@media (max-width: 490px) {
+  #text,
+  #arrow {
+    transform-origin: 50% 50%;
+    transform: translateY(-120px) scale(0.8);
+  }
+
+  #info2 {
+    transform-origin: 50% 50%;
+    transform: translateY(-120px) scale(0.8);
+  }
+}

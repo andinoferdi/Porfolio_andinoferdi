@@ -56,9 +56,7 @@ const Header = () => {
       id="home"
       className="overflow-hidden relative max-w-screen mx-auto px-4 sm:px-6 lg:px-8"
     >
-      <Particles />
-
-      <div className="min-h-[70vh] flex flex-col md:flex-row md:flex-wrap items-center justify-center relative gap-8">
+      <div className="min-h-[70vh] flex flex-col md:flex-row md:flex-wrap items-center justify-center relative gap-8 mt-20">
         <div
           className="text-white flex flex-col justify-center items-center md:items-center px-6 md:mr-10 text-center md:text-center"
           data-aos="fade-down"

@@ -13,7 +13,7 @@ const Testimonials = () => {
   const { Testimonials } = content;
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <section>
+    <section className="bg-white">
       <div className="md:container px-5 pt-14">
         <h2 className="title" data-aos="fade-down">
           {Testimonials.title}
