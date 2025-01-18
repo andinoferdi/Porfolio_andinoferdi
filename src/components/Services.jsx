@@ -1,10 +1,12 @@
 import { content } from "../Content";
 import Particles from "./Particles";
+import Divider from "./Divider";
 
 const Services = () => {
   const { services } = content;
   return (
-    <section id="services" className="bg-[#1e1d39] py-14 relative">
+    <section id="services" className="bg-[#16162b] py-14 relative">
+      <Particles id={"particles-service"} />
       {/* Background abu-abu */}
       <div className="md:container px-5">
         <h1
@@ -25,7 +27,7 @@ const Services = () => {
             <div
               key={i}
               data-aos="fade-up"
-              className="relative border-2 border-gray-300 rounded-xl text-center p-6 shadow-md hover:shadow-lg transition-all"
+              className="relative border-2 border-white rounded-xl text-center p-6 shadow-md hover:shadow-lg transition-all"
             >
               <div
                 className="absolute inset-0 rounded-xl border-2 border-transparent hover:border-red-500 opacity-0 hover:opacity-100 hover:shadow-[0_0_20px_#FF0000] transition-all duration-300"
