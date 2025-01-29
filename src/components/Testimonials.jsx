@@ -75,7 +75,7 @@ const Testimonials = () => {
         <br />
 
         {testimonials.length === 0 ? (
-          <div className="text-center text-white text-lg">
+          <div className="text-center text-white text-lg" data-aos="fade-down">
             No comments yet, leave a comment below.
           </div>
         ) : testimonials.length === 1 ? (
