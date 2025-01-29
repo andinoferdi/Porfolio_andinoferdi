@@ -54,7 +54,7 @@ const App = () => {
         <Contact />
         <footer className="p-3 text-center bg-[#ffff] py-14 relative">
           <h6 className="mb-3 font-bold">Andino Ferdiansah</h6>
-          <p>codeaprogram © All CopyRights Reserved 2022</p>
+          <p>© CopyRights 2025</p>
         </footer>
       </div>
     </div>
