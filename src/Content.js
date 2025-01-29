@@ -56,15 +56,7 @@ import project2 from "/src/assets/images/Projects/img2.png";
 import project3 from "/src/assets/images/Projects/img3.png";
 import person_project from "/src/assets/images/Projects/person.png";
 
-// Testimonials assets
-import avatar1 from "/src/assets/images/Testimonials/avatar1.png";
-import avatar2 from "/src/assets/images/Testimonials/avatar2.png";
-import avatar3 from "/src/assets/images/Testimonials/avatar3.png";
-import avatar4 from "/src/assets/images/Testimonials/avatar4.png";
-
-// Hireme assets
-import Hireme_person from "/src/assets/images/Hireme/person.png";
-import Hireme_person2 from "/src/assets/images/Hireme/person2.png";
+// Comments assets
 
 // React Icons
 import { GrMail } from "react-icons/gr";
@@ -486,37 +478,17 @@ export const content = {
       {
         review:
           "“In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra”",
-        img: avatar1,
         name: "JOHN DOE",
-      },
-      {
-        review:
-          "“In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra”",
-        img: avatar2,
-        name: "Tom Alex",
-      },
-      {
-        review:
-          "“In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra”",
-        img: avatar3,
-        name: "Johnny",
-      },
-      {
-        review:
-          "“In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra”",
-        img: avatar4,
-        name: "ROBBIN",
       },
     ],
   },
-  Hireme: {
-    title: "Hire Me",
-    subtitle: "FOR YOUR PROJECTS",
-    image1: Hireme_person,
-    image2: Hireme_person2,
-    para: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document elying on mean",
-    btnText: "Hire Me",
+  Comments: {
+    title: "Comments",
+    subtitle: "Share Your Thoughts",
+    para: "Feel free to leave your comment below. We appreciate all feedback and constructive discussions.",
+    btnText: "Submit",
   },
+
   Contact: {
     title: "Contect Me",
     subtitle: "GET IN TOUCH",
