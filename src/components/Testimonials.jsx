@@ -18,14 +18,12 @@ const Testimonials = () => {
         if (data.timestamp && data.timestamp.seconds) {
           const dateObj = new Date(data.timestamp.seconds * 1000);
 
-          // Format date as "January 30, 2025"
           const formattedDate = dateObj.toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
             day: "numeric",
           });
 
-          // Format time as "13:08" (24-hour format)
           const formattedTime = dateObj.toLocaleTimeString("en-GB", {
             hour: "2-digit",
             minute: "2-digit",
@@ -55,10 +53,14 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="bg-[#16162b] py-14 relative">
+    <section
+      id="testimonials"
+      className="bg-[#16162b] py-14 relative"
+      data-aos="fade-down"
+    >
       <Particles id={"particles-testimonials"} />
-      <div className="md:container px-5">
-        <div className="text-center">
+      <div className="md:container px-5" data-aos="fade-down">
+        <div className="text-center" data-aos="fade-down">
           <h1
             className="text-center text-2xl md:text-3xl font-bold mb-4 text-white"
             data-aos="fade-down"
@@ -79,15 +81,22 @@ const Testimonials = () => {
             No comments yet, leave a comment below.
           </div>
         ) : testimonials.length === 1 ? (
-          <div className="mx-auto max-w-lg p-8 border-2 rounded-2xl text-center bg-white">
-            <h6 className="text-black font-bold">{testimonials[0].name}</h6>
-            <p className="text-black">{testimonials[0].review}</p>
-            <p className="text-gray-500 text-sm mt-2">
+          <div
+            className="mx-auto max-w-lg p-8 border-2 rounded-2xl text-center bg-white"
+            data-aos="fade-down"
+          >
+            <h6 className="text-black font-bold" data-aos="fade-down">
+              {testimonials[0].name}
+            </h6>
+            <p className="text-black" data-aos="fade-down">
+              {testimonials[0].review}
+            </p>
+            <p className="text-gray-500 text-sm mt-2" data-aos="fade-down">
               {testimonials[0].timestamp}
             </p>
           </div>
         ) : testimonials.length > 3 ? (
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6" data-aos="fade-down">
             {testimonials.map((content, index) => (
               <div
                 key={content.id}
@@ -97,10 +106,15 @@ const Testimonials = () => {
                     ? "md:col-span-2 mx-auto w-1/2"
                     : ""
                 }`}
+                data-aos="fade-down"
               >
-                <h6 className="text-black font-bold">{content.name}</h6>
-                <p className="text-black">{content.review}</p>
-                <p className="text-gray-500 text-sm mt-2">
+                <h6 className="text-black font-bold" data-aos="fade-down">
+                  {content.name}
+                </h6>
+                <p className="text-black" data-aos="fade-down">
+                  {content.review}
+                </p>
+                <p className="text-gray-500 text-sm mt-2" data-aos="fade-down">
                   {content.timestamp}
                 </p>
               </div>
@@ -115,7 +129,7 @@ const Testimonials = () => {
                 return `<span class="${className} custom-bullet"></span>`;
               },
             }}
-            data-aos="fade-up"
+            data-aos="fade-down"
             loop={testimonials.length > 1}
             spaceBetween={40}
             slidesPerView={2}
@@ -126,18 +140,20 @@ const Testimonials = () => {
             className="h-[25rem] md:h-96 max-w-3xl"
           >
             {testimonials.map((content, i) => (
-              <SwiperSlide key={content.id}>
+              <SwiperSlide key={content.id} data-aos="fade-down">
                 <div
                   className={`duration-500 mx-8 border-2 p-8 h-full rounded-2xl flex flex-col items-center gap-6 border-slate-200 ${
                     activeIndex === i
                       ? "bg-white scale-100"
                       : "bg-bg_light_primary scale-90"
                   }`}
+                  data-aos="fade-down"
                 >
                   <h6
                     className={`text-center font-bold ${
                       activeIndex === i ? "text-black" : "text-gray-400"
                     }`}
+                    data-aos="fade-down"
                   >
                     {content.name}
                   </h6>
@@ -145,10 +161,14 @@ const Testimonials = () => {
                     className={`sm:text-base text-sm text-center ${
                       activeIndex === i ? "text-black" : "text-gray-400"
                     }`}
+                    data-aos="fade-down"
                   >
                     {content.review}
                   </p>
-                  <p className="text-gray-500 text-sm mt-2">
+                  <p
+                    className="text-gray-500 text-sm mt-2"
+                    data-aos="fade-down"
+                  >
                     {content.timestamp}
                   </p>
                 </div>
