@@ -53,11 +53,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section
-      id="testimonials"
-      className="bg-[#16162b] py-14 relative"
-      data-aos="fade-down"
-    >
+    <section id="testimonials" className="bg-[#16162b] py-14 relative">
       <Particles id={"particles-testimonials"} />
       <div className="md:container px-5" data-aos="fade-down">
         <div className="text-center" data-aos="fade-down">
