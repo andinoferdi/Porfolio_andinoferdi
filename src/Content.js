@@ -483,7 +483,7 @@ export const content = {
   },
   Comments: {
     title: "Comments",
-    subtitle: "Share Your Thoughts",
+    subtitle: "SHARE YOUR THOUGHTS",
     para: "Feel free to leave your comment below. We appreciate all feedback and constructive discussions.",
     btnText: "Submit",
   },
