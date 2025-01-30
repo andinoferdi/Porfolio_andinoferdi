@@ -35,6 +35,7 @@ const Testimonials = () => {
             name: data.name,
             review: data.message,
             timestamp: `${formattedDate} at ${formattedTime}`,
+            timestampValue: data.timestamp.seconds, // Menyimpan nilai asli untuk sorting
           };
         } else {
           return {
@@ -42,9 +43,13 @@ const Testimonials = () => {
             name: data.name,
             review: data.message,
             timestamp: "Unknown time",
+            timestampValue: 0, // Default untuk data tanpa timestamp
           };
         }
       });
+
+      // Urutkan berdasarkan timestampValue secara descending (terbaru ke atas)
+      fetchedTestimonials.sort((a, b) => b.timestampValue - a.timestampValue);
 
       setTestimonials(fetchedTestimonials);
     });
