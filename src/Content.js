@@ -102,7 +102,7 @@ export const content = {
 
   skills: {
     title: "Knowledge",
-    subtitle: "These are the knowledge that I know",
+    subtitle: "THIS IS THE KNOWLEDGE THAT I KNOW",
     skills_content: [
       {
         name: "Laravel",
@@ -407,7 +407,7 @@ export const content = {
 
   services: {
     title: "Services",
-    subtitle: "These are the services that I can offer",
+    subtitle: "THESE ARE THE SERVICES THAT I CAN OFFER",
     service_content: [
       {
         title: "Front-End Development",
@@ -454,7 +454,7 @@ export const content = {
 
   Projects: {
     title: "Projects",
-    subtitle: "MY CREATION",
+    subtitle: "HERE ARE THE PROJECTS THAT I HAVE WORKED ON",
     project_content: [
       {
         title: "Gym Website",
@@ -472,7 +472,7 @@ export const content = {
   },
   Testimonials: {
     title: "Testimonials",
-    subtitle: "MY CLIENT REVIEWS",
+    subtitle: "HERE'S WHAT PEOPLE ARE SAYING ABOUT MY WEBSITE",
     testimonials_content: [
       {
         review:

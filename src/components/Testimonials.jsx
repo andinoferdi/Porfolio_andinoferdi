@@ -69,7 +69,7 @@ const Testimonials = () => {
             className="text-center text-sm md:text-base text-white mb-6"
             data-aos="fade-down"
           >
-            MY CLIENT REVIEWS
+            HERE'S WHAT PEOPLE ARE SAYING ABOUT MY WEBSITE
           </h6>
         </div>
         <br />
@@ -118,12 +118,12 @@ const Testimonials = () => {
             data-aos="fade-up"
             loop={testimonials.length > 1}
             spaceBetween={40}
-            slidesPerView={1.7}
+            slidesPerView={2}
             onSlideChange={(e) => {
               setActiveIndex(e.realIndex);
             }}
             modules={[Pagination]}
-            className="md:h-96 h-[40rem] max-w-3xl"
+            className="h-[25rem] md:h-96 max-w-3xl"
           >
             {testimonials.map((content, i) => (
               <SwiperSlide key={content.id}>
