@@ -88,13 +88,9 @@ const Testimonials = () => {
             className="mx-auto max-w-lg p-8 border-2 rounded-2xl text-center bg-white"
             data-aos="fade-down"
           >
-            <h6 className="text-black font-bold" data-aos="fade-down">
-              {testimonials[0].name}
-            </h6>
-            <p className="text-black" data-aos="fade-down">
-              {testimonials[0].review}
-            </p>
-            <p className="text-gray-500 text-sm mt-2" data-aos="fade-down">
+            <h6 className="text-black font-bold">{testimonials[0].name}</h6>
+            <p className="text-black">{testimonials[0].review}</p>
+            <p className="text-gray-500 text-sm mt-2">
               {testimonials[0].timestamp}
             </p>
           </div>
@@ -111,13 +107,9 @@ const Testimonials = () => {
                 }`}
                 data-aos="fade-down"
               >
-                <h6 className="text-black font-bold" data-aos="fade-down">
-                  {content.name}
-                </h6>
-                <p className="text-black" data-aos="fade-down">
-                  {content.review}
-                </p>
-                <p className="text-gray-500 text-sm mt-2" data-aos="fade-down">
+                <h6 className="text-black font-bold">{content.name}</h6>
+                <p className="text-black">{content.review}</p>
+                <p className="text-gray-500 text-sm mt-2">
                   {content.timestamp}
                 </p>
               </div>
