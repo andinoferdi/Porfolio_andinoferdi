@@ -2,10 +2,14 @@ import { useEffect } from "react";
 import "./Parallax.css";
 
 function triigerParallax() {
+  //More info about this project and the newer optimized version: https://isladjan.com/work/4/
+  //Author: isladjan - https://isladjan.com/
+
   gsap.registerPlugin(ScrollTrigger);
 
   let speed = 100;
   let height = document.querySelector("svg").getBBox().height;
+  //let svgCord = screenToSVG(document.querySelector("svg"), window.innerWidth / 2, window.innerHeight / 2);
 
   gsap.set("#h2-1", { opacity: 0 });
   gsap.set("#bg_grad", { attr: { cy: "-50" } });
@@ -17,15 +21,17 @@ function triigerParallax() {
     gsap.set(["#cloudStart-L", "#cloudStart-R"], { x: 10, opacity: 1 });
   });
 
+  /*  SCENE 1 */
   let scene1 = gsap.timeline();
   ScrollTrigger.create({
     animation: scene1,
-    trigger: ".main",
+    trigger: ".scrollElement",
     start: "top top",
     end: "45% 100%",
     scrub: 3,
   });
 
+  // hills animation
   scene1.to(
     "#h1-1",
     { y: 3 * speed, x: 1 * speed, scale: 0.9, ease: "power1.in" },
@@ -56,7 +62,7 @@ function triigerParallax() {
       x: 800,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: ".main",
+        trigger: ".scrollElement",
         start: "15% top",
         end: "60% 100%",
         scrub: 4,
@@ -74,7 +80,7 @@ function triigerParallax() {
   let clouds = gsap.timeline();
   ScrollTrigger.create({
     animation: clouds,
-    trigger: ".main",
+    trigger: ".scrollElement",
     start: "top top",
     end: "70% 100%",
     scrub: 1,
@@ -89,7 +95,7 @@ function triigerParallax() {
   let sun = gsap.timeline();
   ScrollTrigger.create({
     animation: sun,
-    trigger: ".main",
+    trigger: ".scrollElement",
     start: "1% top",
     end: "2150 100%",
     scrub: 2,
@@ -116,7 +122,7 @@ function triigerParallax() {
   let scene2 = gsap.timeline();
   ScrollTrigger.create({
     animation: scene2,
-    trigger: ".main",
+    trigger: ".scrollElement",
     start: "15% top",
     end: "40% 100%",
     scrub: 3,
@@ -140,7 +146,7 @@ function triigerParallax() {
       //transformOrigin: "50% 50%",
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".main",
+        trigger: ".scrollElement",
         start: "40% top",
         end: "70% 100%",
         scrub: 3,
@@ -168,7 +174,7 @@ function triigerParallax() {
   let sun2 = gsap.timeline();
   ScrollTrigger.create({
     animation: sun2,
-    trigger: ".main",
+    trigger: ".scrollElement",
     start: "2000 top",
     end: "5000 100%",
     scrub: 2,
@@ -190,7 +196,7 @@ function triigerParallax() {
   let sceneTransition = gsap.timeline();
   ScrollTrigger.create({
     animation: sceneTransition,
-    trigger: ".main",
+    trigger: ".scrollElement",
     start: "60% top",
     end: "bottom 100%",
     scrub: 3,
@@ -208,7 +214,7 @@ function triigerParallax() {
   let scene3 = gsap.timeline();
   ScrollTrigger.create({
     animation: scene3,
-    trigger: ".main",
+    trigger: ".scrollElement",
     start: "70% 50%",
     end: "bottom 100%",
     scrub: 3,
@@ -238,9 +244,9 @@ function triigerParallax() {
   let fstarTL = gsap.timeline();
   ScrollTrigger.create({
     animation: fstarTL,
-    trigger: ".main",
+    trigger: ".scrollElement",
     start: "4200 top",
-    end: "100% bottom",
+    end: "6000 bottom",
     scrub: 2,
     onEnter: function () {
       gsap.set("#fstar", { opacity: 1 });
@@ -326,6 +332,14 @@ function triigerParallax() {
     { opacity: 0.3 },
     { opacity: 1, duration: 0.3, repeat: -1, repeatDelay: 1 }
   );
+
+  // function screenToSVG(svg, x, y) {
+  //     var pt = svg.createSVGPoint();
+  //     pt.x = x;
+  //     pt.y = y;
+  //     var cursorPt = pt.matrixTransform(svg.getScreenCTM().inverse());
+  //     return { x: Math.floor(cursorPt.x), y: Math.floor(cursorPt.y) }
+  // }
 
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
