@@ -62,44 +62,31 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="bg-[#16162b] py-14 relative">
       {idleTestimonial && <Particles id={"particles-Testimonials"} />}
-      <div className="md:container px-5" data-aos="fade-down">
-        <div className="text-center" data-aos="fade-down">
-          <h1
-            className="text-center text-2xl md:text-3xl font-bold mb-4 text-white"
-            data-aos="fade-down"
-          >
+      <div className="md:container px-5">
+        <div className="text-center">
+          <h1 className="text-center text-2xl md:text-3xl font-bold mb-4 text-white">
             Testimonials
           </h1>
-          <h6
-            className="text-center text-sm md:text-base text-white mb-6"
-            data-aos="fade-down"
-          >
+          <h6 className="text-center text-sm md:text-base text-white mb-6">
             HERE'S WHAT PEOPLE ARE SAYING ABOUT MY WEBSITE
           </h6>
         </div>
         <br />
 
         {testimonials.length === 0 ? (
-          <div className="text-center text-white text-lg" data-aos="fade-down">
+          <div className="text-center text-white text-lg">
             No comments yet, leave a comment below.
           </div>
         ) : testimonials.length === 1 ? (
-          <div
-            className="mx-auto max-w-lg p-8 border-2 rounded-2xl text-center bg-white"
-            data-aos="fade-down"
-          >
-            <h6 className="text-black font-bold" data-aos="fade-down">
-              {testimonials[0].name}
-            </h6>
-            <p className="text-black" data-aos="fade-down">
-              {testimonials[0].review}
-            </p>
-            <p className="text-gray-500 text-sm mt-2" data-aos="fade-down">
+          <div className="mx-auto max-w-lg p-8 border-2 rounded-2xl text-center bg-white">
+            <h6 className="text-black font-bold">{testimonials[0].name}</h6>
+            <p className="text-black">{testimonials[0].review}</p>
+            <p className="text-gray-500 text-sm mt-2">
               {testimonials[0].timestamp}
             </p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-6" data-aos="fade-down">
+          <div className="grid md:grid-cols-2 gap-6">
             {testimonials.map((content, index) => (
               <div
                 key={content.id}
@@ -109,15 +96,10 @@ const Testimonials = () => {
                     ? "md:col-span-2 mx-auto w-1/2"
                     : ""
                 }`}
-                data-aos="fade-down"
               >
-                <h6 className="text-black font-bold" data-aos="fade-down">
-                  {content.name}
-                </h6>
-                <p className="text-black" data-aos="fade-down">
-                  {content.review}
-                </p>
-                <p className="text-gray-500 text-sm mt-2" data-aos="fade-down">
+                <h6 className="text-black font-bold">{content.name}</h6>
+                <p className="text-black">{content.review}</p>
+                <p className="text-gray-500 text-sm mt-2">
                   {content.timestamp}
                 </p>
               </div>
