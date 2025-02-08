@@ -21,6 +21,7 @@ const App = () => {
       offset: 100,
       once: true,
       disable: false,
+      setTimeout: 1000,
     });
 
     const preloader = document.getElementById("preloader");
