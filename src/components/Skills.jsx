@@ -1,7 +1,6 @@
 import { createElement, useState, useEffect } from "react";
 import { content } from "../Content";
 import Modal from "react-modal";
-import Divider from "./Divider";
 import Particles from "./Particles";
 
 Modal.setAppElement("#root");

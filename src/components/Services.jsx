@@ -1,6 +1,5 @@
 import { content } from "../Content";
 import Particles from "./Particles";
-import Divider from "./Divider";
 
 const Services = () => {
   const { services } = content;

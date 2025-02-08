@@ -3,13 +3,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
-import Particles from "./Particles";
+import Divider from "./Divider_top";
 
 const Projects = () => {
   const { Projects } = content;
   return (
     <section id="projects" className="bg-[#ffff] relative">
+      <Divider />
       {/* Tambahkan Particles */}
+
       <div className="md:container px-5 pt-14 min-h-screen flex flex-col justify-between relative z-10">
         <div className="text-center">
           {/* Align title and subtitle to the center */}
