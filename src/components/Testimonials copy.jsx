@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { db } from "../firebase";
+import { collection, onSnapshot } from "firebase/firestore";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Particles from "./Particles";
 import "swiper/css";
@@ -5,42 +8,60 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: "Alice Johnson",
-      review: "This website is amazing! Super helpful and easy to navigate.",
-      timestamp: "January 10, 2025 at 14:30",
-    },
-    {
-      id: 2,
-      name: "Michael Smith",
-      review: "I love the design! Very user-friendly and visually appealing.",
-      timestamp: "January 15, 2025 at 09:45",
-    },
-    {
-      id: 3,
-      name: "Sophia Lee",
-      review: "Great experience! Everything works smoothly and fast.",
-      timestamp: "January 18, 2025 at 16:10",
-    },
-    {
-      id: 4,
-      name: "Daniel Brown",
-      review: "Incredible service! Would highly recommend to others.",
-      timestamp: "January 22, 2025 at 20:00",
-    },
-    {
-      id: 5,
-      name: "Emma Wilson",
-      review: "Top-notch support! The team was very responsive and helpful.",
-      timestamp: "January 25, 2025 at 11:20",
-    },
-  ];
+  const [testimonials, setTestimonials] = useState([]);
+  const [idleTestimonial, setIdleTestimonial] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, "comments"), (snapshot) => {
+      const fetchedTestimonials = snapshot.docs.map((doc) => {
+        const data = doc.data();
+        if (data.timestamp && data.timestamp.seconds) {
+          const dateObj = new Date(data.timestamp.seconds * 1000);
+
+          const formattedDate = dateObj.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+
+          const formattedTime = dateObj.toLocaleTimeString("en-GB", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hourCycle: "h23",
+          });
+
+          return {
+            id: doc.id,
+            name: data.name,
+            review: data.message,
+            timestamp: `${formattedDate} at ${formattedTime}`,
+            timestampValue: data.timestamp.seconds, // Menyimpan nilai asli untuk sorting
+          };
+        } else {
+          return {
+            id: doc.id,
+            name: data.name,
+            review: data.message,
+            timestamp: "Unknown time",
+            timestampValue: 0, // Default untuk data tanpa timestamp
+          };
+        }
+      });
+
+      // Urutkan berdasarkan timestampValue secara descending (terbaru ke atas)
+      fetchedTestimonials.sort((a, b) => b.timestampValue - a.timestampValue);
+
+      setTestimonials(fetchedTestimonials);
+      setIdleTestimonial(true);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   return (
     <section id="testimonials" className="bg-[#16162b] py-14 relative">
-      <Particles id={"particles-Testimonials"} />
+      {idleTestimonial && <Particles id={"particles-Testimonials"} />}
       <div className="md:container px-5" data-aos="fade-down">
         <div className="text-center" data-aos="fade-down">
           <h1
@@ -58,7 +79,11 @@ const Testimonials = () => {
         </div>
         <br />
 
-        {testimonials.length === 1 ? (
+        {testimonials.length === 0 ? (
+          <div className="text-center text-white text-lg" data-aos="fade-down">
+            No comments yet, leave a comment below.
+          </div>
+        ) : testimonials.length === 1 ? (
           <div
             className="mx-auto max-w-lg p-8 border-2 rounded-2xl text-center bg-white"
             data-aos="fade-down"
