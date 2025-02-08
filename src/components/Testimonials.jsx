@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, onSnapshot } from "firebase/firestore";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Particles from "./Particles";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Pagination } from "swiper";
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -59,6 +61,7 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="bg-[#16162b] py-14 relative">
+      {idleTestimonial && <Particles id={"particles-Testimonials"} />}
       <div className="md:container px-5" data-aos="fade-down">
         <div className="text-center" data-aos="fade-down">
           <h1
