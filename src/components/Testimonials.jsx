@@ -92,7 +92,7 @@ const Testimonials = () => {
             </p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-6" data-aos="fade-down">
+          <div className="grid md:grid-cols-2 gap-6">
             {testimonials.map((content, index) => (
               <div
                 key={content.id}
