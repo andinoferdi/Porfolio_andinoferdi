@@ -16,13 +16,14 @@ const App = () => {
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100);
-    Aos.init({
-      duration: 1200,
-      offset: 100,
-      once: true,
-      disable: false,
-      setTimeout: 1000,
-    });
+    setTimeout(() => {
+      Aos.init({
+        duration: 1200,
+        offset: 100,
+        once: true,
+        disable: false,
+      });
+    }, 2000);
 
     const preloader = document.getElementById("preloader");
     const duration = 1300;
