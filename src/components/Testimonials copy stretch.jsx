@@ -9,7 +9,6 @@ import { Pagination } from "swiper";
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
-  const [idleTestimonial, setIdleTestimonial] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -53,7 +52,6 @@ const Testimonials = () => {
       fetchedTestimonials.sort((a, b) => b.timestampValue - a.timestampValue);
 
       setTestimonials(fetchedTestimonials);
-      setIdleTestimonial(true);
     });
 
     return () => unsubscribe();
@@ -61,7 +59,7 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="bg-[#16162b] py-14 relative">
-      {idleTestimonial && <Particles id={"particles-Testimonials"} />}
+      <Particles id={"particles-testimonials"} />
       <div className="md:container px-5" data-aos="fade-down">
         <div className="text-center" data-aos="fade-down">
           <h1
@@ -98,7 +96,7 @@ const Testimonials = () => {
               {testimonials[0].timestamp}
             </p>
           </div>
-        ) : (
+        ) : testimonials.length > 3 ? (
           <div className="grid md:grid-cols-2 gap-6" data-aos="fade-down">
             {testimonials.map((content, index) => (
               <div
@@ -123,6 +121,61 @@ const Testimonials = () => {
               </div>
             ))}
           </div>
+        ) : (
+          <Swiper
+            direction={"vertical"}
+            pagination={{
+              clickable: true,
+              renderBullet: (index, className) => {
+                return `<span class="${className} custom-bullet"></span>`;
+              },
+            }}
+            data-aos="fade-down"
+            loop={testimonials.length > 1}
+            spaceBetween={40}
+            slidesPerView={2}
+            onSlideChange={(e) => {
+              setActiveIndex(e.realIndex);
+            }}
+            modules={[Pagination]}
+            className="h-[25rem] md:h-96 max-w-3xl"
+          >
+            {testimonials.map((content, i) => (
+              <SwiperSlide key={content.id} data-aos="fade-down">
+                <div
+                  className={`duration-500 mx-8 border-2 p-8 h-full rounded-2xl flex flex-col items-center gap-6 border-slate-200 ${
+                    activeIndex === i
+                      ? "bg-white scale-100"
+                      : "bg-bg_light_primary scale-90"
+                  }`}
+                  data-aos="fade-down"
+                >
+                  <h6
+                    className={`text-center font-bold ${
+                      activeIndex === i ? "text-black" : "text-gray-400"
+                    }`}
+                    data-aos="fade-down"
+                  >
+                    {content.name}
+                  </h6>
+                  <p
+                    className={`sm:text-base text-sm text-center ${
+                      activeIndex === i ? "text-black" : "text-gray-400"
+                    }`}
+                    data-aos="fade-down"
+                  >
+                    {content.review}
+                  </p>
+                  <p
+                    className="text-gray-500 text-sm mt-2"
+                    data-aos="fade-down"
+                  >
+                    {content.timestamp}
+                  </p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         )}
       </div>
     </section>

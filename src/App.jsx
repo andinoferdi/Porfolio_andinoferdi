@@ -7,7 +7,7 @@ import Skills from "./components/Skills";
 import Service from "./components/Services";
 import Projects from "./components/Projects";
 import Testimonials from "./components/Testimonials";
-import Hireme from "./components/Hireme";
+import Comments from "./components/Comments";
 import Contact from "./components/Contact";
 import Parallax from "./components/Parallax";
 
@@ -50,11 +50,11 @@ const App = () => {
         <Service />
         <Projects />
         <Testimonials />
-        <Hireme />
+        <Comments />
         <Contact />
-        <footer className="p-3 text-center bg-gray-900 text-gray-300">
+        <footer className="p-3 text-center bg-[#ffff] py-14 relative">
           <h6 className="mb-3 font-bold">Andino Ferdiansah</h6>
-          <p>codeaprogram © All CopyRights Reserved 2022</p>
+          <p>© CopyRights 2025</p>
         </footer>
       </div>
     </div>
