@@ -2,14 +2,10 @@ import { useEffect } from "react";
 import "./Parallax.css";
 
 function triigerParallax() {
-  //More info about this project and the newer optimized version: https://isladjan.com/work/4/
-  //Author: isladjan - https://isladjan.com/
-
   gsap.registerPlugin(ScrollTrigger);
 
   let speed = 100;
   let height = document.querySelector("svg").getBBox().height;
-  //let svgCord = screenToSVG(document.querySelector("svg"), window.innerWidth / 2, window.innerHeight / 2);
 
   gsap.set("#h2-1", { opacity: 0 });
   gsap.set("#bg_grad", { attr: { cy: "-50" } });
@@ -21,17 +17,15 @@ function triigerParallax() {
     gsap.set(["#cloudStart-L", "#cloudStart-R"], { x: 10, opacity: 1 });
   });
 
-  /*  SCENE 1 */
   let scene1 = gsap.timeline();
   ScrollTrigger.create({
     animation: scene1,
-    trigger: ".scrollElement",
+    trigger: ".main",
     start: "top top",
     end: "45% 100%",
     scrub: 3,
   });
 
-  // hills animation
   scene1.to(
     "#h1-1",
     { y: 3 * speed, x: 1 * speed, scale: 0.9, ease: "power1.in" },
@@ -62,7 +56,7 @@ function triigerParallax() {
       x: 800,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: ".scrollElement",
+        trigger: ".main",
         start: "15% top",
         end: "60% 100%",
         scrub: 4,
@@ -80,7 +74,7 @@ function triigerParallax() {
   let clouds = gsap.timeline();
   ScrollTrigger.create({
     animation: clouds,
-    trigger: ".scrollElement",
+    trigger: ".main",
     start: "top top",
     end: "70% 100%",
     scrub: 1,
@@ -95,7 +89,7 @@ function triigerParallax() {
   let sun = gsap.timeline();
   ScrollTrigger.create({
     animation: sun,
-    trigger: ".scrollElement",
+    trigger: ".main",
     start: "1% top",
     end: "2150 100%",
     scrub: 2,
@@ -122,7 +116,7 @@ function triigerParallax() {
   let scene2 = gsap.timeline();
   ScrollTrigger.create({
     animation: scene2,
-    trigger: ".scrollElement",
+    trigger: ".main",
     start: "15% top",
     end: "40% 100%",
     scrub: 3,
@@ -146,7 +140,7 @@ function triigerParallax() {
       //transformOrigin: "50% 50%",
       ease: "power3.out",
       scrollTrigger: {
-        trigger: ".scrollElement",
+        trigger: ".main",
         start: "40% top",
         end: "70% 100%",
         scrub: 3,
@@ -174,7 +168,7 @@ function triigerParallax() {
   let sun2 = gsap.timeline();
   ScrollTrigger.create({
     animation: sun2,
-    trigger: ".scrollElement",
+    trigger: ".main",
     start: "2000 top",
     end: "5000 100%",
     scrub: 2,
@@ -196,7 +190,7 @@ function triigerParallax() {
   let sceneTransition = gsap.timeline();
   ScrollTrigger.create({
     animation: sceneTransition,
-    trigger: ".scrollElement",
+    trigger: ".main",
     start: "60% top",
     end: "bottom 100%",
     scrub: 3,
@@ -214,7 +208,7 @@ function triigerParallax() {
   let scene3 = gsap.timeline();
   ScrollTrigger.create({
     animation: scene3,
-    trigger: ".scrollElement",
+    trigger: ".main",
     start: "70% 50%",
     end: "bottom 100%",
     scrub: 3,
@@ -244,9 +238,9 @@ function triigerParallax() {
   let fstarTL = gsap.timeline();
   ScrollTrigger.create({
     animation: fstarTL,
-    trigger: ".scrollElement",
+    trigger: ".main",
     start: "4200 top",
-    end: "6000 bottom",
+    end: "100% bottom",
     scrub: 2,
     onEnter: function () {
       gsap.set("#fstar", { opacity: 1 });
@@ -333,14 +327,6 @@ function triigerParallax() {
     { opacity: 1, duration: 0.3, repeat: -1, repeatDelay: 1 }
   );
 
-  // function screenToSVG(svg, x, y) {
-  //     var pt = svg.createSVGPoint();
-  //     pt.x = x;
-  //     pt.y = y;
-  //     var cursorPt = pt.matrixTransform(svg.getScreenCTM().inverse());
-  //     return { x: Math.floor(cursorPt.x), y: Math.floor(cursorPt.y) }
-  // }
-
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   };
@@ -369,9 +355,10 @@ const Parallax = () => {
           gradientTransform="matrix(-1, 0, 0, 1.36, 231.36, -100.14)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.07" stop-color="#9c536b" />
-          <stop offset="0.98" stop-color="#d98981" />
+          <stop offset="0.07" stop-color="#201F3F" />
+          <stop offset="0.98" stop-color="#0E0A1A" />
         </linearGradient>
+
         <radialGradient
           id="bg_grad"
           cx="375"
@@ -379,24 +366,13 @@ const Parallax = () => {
           r="318.69"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.1" stop-color="#F5C54E" id="sun" />
-          <stop offset="0.1" stop-color="#FFDBA6" />
-          <stop offset="0.0" stop-color="#F7BB93" />
-          <stop offset="0.0" stop-color="#F2995E" />
-          <stop offset="0.0" stop-color="#f07560" />
-          <stop offset="0.8" stop-color="#FFAB93" />
+          <stop offset="0.1" stop-color="#FFFFFF" stop-opacity="1" />
+          <stop offset="0.3" stop-color="#D9D9D9" stop-opacity="1" />
+          <stop offset="0.5" stop-color="#A6A6A6" stop-opacity="1" />
+          <stop offset="0.7" stop-color="#4A4A6A" stop-opacity="1" />
+          <stop offset="0.9" stop-color="#040014" stop-opacity="1" />
         </radialGradient>
-        <linearGradient
-          id="grad2"
-          x1="242.5"
-          y1="356.25"
-          x2="750"
-          y2="356.25"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop offset="0" stop-color="#fbbd93" />
-          <stop offset="0.98" stop-color="#c46976" />
-        </linearGradient>
+
         <linearGradient
           id="grad3"
           x1="467.26"
@@ -405,9 +381,10 @@ const Parallax = () => {
           y2="225.47"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.01" stop-color="#ffb8bd" />
-          <stop offset="1" stop-color="#914d64" />
+          <stop offset="0.07" stop-color="#201F3F" />
+          <stop offset="0.98" stop-color="#0E0A1A" />
         </linearGradient>
+
         <linearGradient
           id="grad4"
           x1="216.56"
@@ -416,8 +393,8 @@ const Parallax = () => {
           y2="600.82"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#70375a" />
-          <stop offset="0.96" stop-color="#8a6e95" />
+          <stop offset="0" stop-color="#2E145B" />
+          <stop offset="0.96" stop-color="#443973" />
         </linearGradient>
         <linearGradient
           id="grad5"
@@ -427,8 +404,8 @@ const Parallax = () => {
           y2="413.12"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#433d6c" />
-          <stop offset="1" stop-color="#392e54" />
+          <stop offset="0" stop-color="#1A1137" />
+          <stop offset="1" stop-color="#231B4D" />
         </linearGradient>
         <linearGradient
           id="grad6"
@@ -438,9 +415,10 @@ const Parallax = () => {
           y2="498.93"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#2b2850" />
-          <stop offset="0.99" stop-color="#563a6a" />
+          <stop offset="0" stop-color="#2B2850" />
+          <stop offset="0.99" stop-color="#563A6A" />
         </linearGradient>
+
         <linearGradient
           id="grad7"
           x1="434.38"
@@ -477,7 +455,6 @@ const Parallax = () => {
           <stop offset="0.01" stop-color="#120e22" />
           <stop offset="1" stop-color="#221d42" />
         </linearGradient>
-
         <linearGradient
           id="lg4"
           x1="641.98"
@@ -496,7 +473,8 @@ const Parallax = () => {
           x2="171.33"
           y2="343.08"
           xlinkHref="#lg4"
-        />
+        ></linearGradient>
+
         <linearGradient
           id="lg6"
           x1="505.71"
@@ -521,7 +499,6 @@ const Parallax = () => {
           y2="507.08"
           xlinkHref="#lg4"
         />
-
         <radialGradient
           id="bg2-grad"
           cx="365.22"
@@ -530,16 +507,16 @@ const Parallax = () => {
           gradientTransform="translate(750 552.6) rotate(180) scale(1 1.11)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="hsla(349, 94%, 75%, 1)" />
-          <stop offset="0.12" stop-color="hsla(342, 49%, 62%, 1)" />
-          <stop offset="0.18" stop-color="hsla(328, 37%, 56%, 1)" />
-          <stop offset="0.33" stop-color="hsla(281, 33%, 48%, 1)" />
-          <stop offset="0.41" stop-color="hsla(268, 38%, 48%, 1)" />
-          <stop offset="0.45" stop-color="hsla(266, 38%, 43%, 1)" />
-          <stop offset="0.55" stop-color="hsla(261, 37%, 32%, 1)" />
-          <stop offset="0.64" stop-color="hsla(253, 36%, 24%, 1)" />
-          <stop offset="0.72" stop-color="hsla(244, 33%, 19%, 1)" />
-          <stop offset="0.78" stop-color="hsla(240, 33%, 17%, 1)" />
+          <stop offset="0" stop-color="hsla(240, 45%, 60%, 1)" />
+          <stop offset="0.12" stop-color="hsla(235, 40%, 50%, 1)" />
+          <stop offset="0.18" stop-color="hsla(230, 35%, 40%, 1)" />
+          <stop offset="0.33" stop-color="hsla(225, 30%, 30%, 1)" />
+          <stop offset="0.41" stop-color="hsla(220, 25%, 25%, 1)" />
+          <stop offset="0.45" stop-color="hsla(215, 20%, 20%, 1)" />
+          <stop offset="0.55" stop-color="hsla(210, 15%, 15%, 1)" />
+          <stop offset="0.64" stop-color="hsla(205, 10%, 10%, 1)" />
+          <stop offset="0.72" stop-color="hsla(200, 8%, 8%, 1)" />
+          <stop offset="0.78" stop-color="hsla(195, 5%, 5%, 1)" />
         </radialGradient>
 
         <radialGradient
@@ -550,16 +527,16 @@ const Parallax = () => {
           gradientTransform="matrix(0.89, -0.45, -0.45, -0.89, -473.7, 640.57)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#fff" />
-          <stop offset="0.06" stop-color="#fff" stop-opacity="0.8" />
-          <stop offset="0.12" stop-color="#fff" stop-opacity="0.62" />
-          <stop offset="0.19" stop-color="#fff" stop-opacity="0.45" />
-          <stop offset="0.26" stop-color="#fff" stop-opacity="0.31" />
-          <stop offset="0.33" stop-color="#fff" stop-opacity="0.2" />
-          <stop offset="0.41" stop-color="#fff" stop-opacity="0.11" />
-          <stop offset="0.49" stop-color="#fff" stop-opacity="0.05" />
-          <stop offset="0.59" stop-color="#fff" stop-opacity="0.01" />
-          <stop offset="0.72" stop-color="#fff" stop-opacity="0" />
+          <stop offset="0" stop-color="#ffffff" />
+          <stop offset="0.06" stop-color="#ffffff" stop-opacity="0.8" />
+          <stop offset="0.12" stop-color="#ffffff" stop-opacity="0.62" />
+          <stop offset="0.19" stop-color="#ffffff" stop-opacity="0.45" />
+          <stop offset="0.26" stop-color="#ffffff" stop-opacity="0.31" />
+          <stop offset="0.33" stop-color="#ffffff" stop-opacity="0.2" />
+          <stop offset="0.41" stop-color="#ffffff" stop-opacity="0.11" />
+          <stop offset="0.49" stop-color="#ffffff" stop-opacity="0.05" />
+          <stop offset="0.59" stop-color="#ffffff" stop-opacity="0.01" />
+          <stop offset="0.72" stop-color="#ffffff" stop-opacity="0" />
         </radialGradient>
 
         <linearGradient
@@ -570,8 +547,8 @@ const Parallax = () => {
           y2="461.56"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0" stop-color="#fd75a8" />
-          <stop offset="1" stop-color="#5a2d81" />
+          <stop offset="0" stop-color="#3d3b78" />
+          <stop offset="1" stop-color="#221c44" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-2"
@@ -599,15 +576,9 @@ const Parallax = () => {
         />
       </defs>
 
-      <rect
-        id="bg"
-        width="750"
-        height="500"
-        opacity="0.8"
-        fill="url(#bg_grad)"
-      />
+      <rect id="bg" width="750" height="500" opacity="1" fill="url(#bg_grad)" />
 
-      <g id="clouds" fill="#fefefe">
+      <g id="clouds" fill="#FFFFFF" opacity="0.3">
         <path
           id="cloud4"
           transform="translate(600 0)"
@@ -703,23 +674,6 @@ const Parallax = () => {
           fill="url(#bg2-grad)"
         />
 
-        <g id="fstar">
-          <image
-            width="707"
-            height="429"
-            transform="translate(728.46 16.5) scale(0.24)"
-            xlinkHref="https://i.ibb.co/TWfhqRG/fstar.png"
-          />
-          <circle
-            cx="768.6"
-            cy="78.72"
-            r="39.39"
-            transform="translate(64.22 396.2) rotate(-30.11)"
-            fill="url(#fstar-grad)"
-            style={{ mixBlendMode: "overlay" }}
-          />
-        </g>
-
         <g id="stars" fill="#fff" style={{ opacity: 0 }}>
           <path d="M699.71,128.24a1,1,0,1,1-1-1A1,1,0,0,1,699.71,128.24Z" />
           <path d="M643.78,37.74a1,1,0,1,1-1-1A1,1,0,0,1,643.78,37.74Z" />
@@ -798,13 +752,12 @@ const Parallax = () => {
         </g>
         <g id="hills3" transform="translate(0, -110)">
           <g id="info2">
-            {/* <polygon id="arrow2" points="395.5 482.2 393.4 484.3 375.2 466.1 357 484.3 354.9 482.2 375.2 461.9 395.5 482.2" style="fill: #fff; stroke: #231f20; stroke-miterlimit: 10; stroke-width: .5px;" /> */}
             <polygon
               id="arrow2"
               points="395.5 482.2 393.4 484.3 375.2 466.1 357 484.3 354.9 482.2 375.2 461.9 395.5 482.2"
               style={{
                 fill: "#fff",
-                stroke: "231f20",
+                stroke: "#231f20",
                 strokeMiterlimit: 10,
                 strokeWidth: "0.5px",
               }}
@@ -814,7 +767,7 @@ const Parallax = () => {
               d="m271.8,526.2c8.4,7,22.4-4.5,8.1-9.8-17.8-5.3-3.8-24,9-16.3l-1.1,3.4c-8.6-5.6-19.3,5-5.8,9.5,18.5,6.4,2.2,25.6-11.3,16.7l1.1-3.5Zm40.8,4.2c-23.8,9.7-23.8-30.5,0-21.6l-1,3.3c-17.5-7.5-16.8,23,.1,15.2l.7,3.2Zm4.9-15.1c0-2.7,0-5.1-.2-7.2h3.7v4.5h.3c1.2-3.5,4.3-5.6,7.6-4.9v4c-10-1.9-6.7,14-7.3,19.6h-4.2v-15.9Zm36.1,4.2c0,16.7-23,15.9-22.6.4-.6-16.2,23.2-16.1,22.6-.4Zm-18.4.2c-.3,11.6,14.4,11.7,14.1,0,.6-11.5-14.6-11.7-14.1,0Zm23.7-22.4h4.2v33.9h-4.2v-33.9Zm11.3,0h4.2v33.9h-4.2v-33.9Zm21.6,2.2c10.5-4.2,28.8,5.4,13.7,14.4h0c16.8,8.4-.2,21.4-13.7,17.3v-31.7Zm4.2,13.2c14.5,2.4,13.8-13.7,0-10.4v10.4Zm0,15.4c15.3,3,15.9-14.6,0-12.3v12.3Zm34.4,3.2l-.3-2.9h-.1c-14.1,12.9-22.3-13.8-.2-11.8,1.4-5.4-7.1-7.5-11.3-4.1l-1-2.8c19.1-8.7,16,9.8,16.8,21.6h-3.8Zm-.6-11.8c-7.5-1.9-14.6,7.4-5.8,9.2,5.7-.1,6.2-5.1,5.8-9.2Zm27.3,10.9c-23.8,9.7-23.8-30.5,0-21.6l-1,3.3c-17.5-7.5-16.8,23,.1,15.2l.7,3.2Zm9.1-11.7h0c1.3-1.9,7.3-8.7,8.8-10.6h5.1l-8.9,9.5,10.2,13.6h-5.1l-8-11.1-2.2,2.4v8.7h-4.2v-33.9h4.2v21.4Z"
               style={{
                 fill: "#fff",
-                stroke: "231f20",
+                stroke: "#231f20",
                 strokeMiterlimit: 10,
                 strokeWidth: "0.5px",
               }}
@@ -825,7 +778,6 @@ const Parallax = () => {
             points="756.3 330.5 750.6 327 742.4 331.1 719.1 317.4 705.9 311.9 695.1 307.3 688 314.2 675.7 336.9 665.3 346.8 657.8 353.1 641.2 353.5 633.5 362.6 626.6 373.1 618.5 378.9 596.8 411.3 588.9 404.9 578.9 406.5 539.9 443.4 472 493.8 556 490.9 756.1 490.9 756.3 330.5"
             style={{ fill: "url(#linear-gradient)", mixBlendMode: "multiply" }}
           />
-          {/* style="fill: url(#linear-gradient); mix-blend-mode: multiply;" /> */}
           <path
             id="h3-4"
             d="m453.1,471c-20-.3-48.5-14.4-68.1-10.1-13.5-4.7-34.5-19.9-48.2-23.8-4.1-5.1-13.2-13.6-18.3-16.9l-21.4,5.1c-25.8-9-71.7-48.8-92.2-70.8-23.3,8-24.4,17.5-52.5,13.5l-26.5-23.2c-7.3,4.7-21.4,3.1-28.9,0-10.3-12.3-37.7-44.9-50.7-51.2l-26.6,39.7-21.4-3.8v161.3s204.1-2.7,204.1-2.7l2.2,2.7h252.5l-3.8-19.9Z"
@@ -846,13 +798,13 @@ const Parallax = () => {
             id="h3-2"
             d="m756.1,490.9l-8-59.6-53-.2c-15.1-2.4-50.9-7.7-64.2,4.9-19.1-2.9-49.7-19.3-69.1-17.5-5.3-5.7-16.9-13.1-23.7-14.8l-26.9,20.4c-26.9,1.9-30.4-8.1-52.6-17.2l-12.9,14.9c-8.8-4.9-25.3-12.2-33.6-18.1-22.7,22.2-39,46.1-70,32.9-19.4,17.9-46.6,30.6-69.4,40.5-20.6-4.2-50.8,9.7-71.7,9.9l-.8,4h555.8Z"
             style={{
-              fill: "url(#linear-gradient)-4",
+              fill: "url(#linear-gradient-4)",
               mixBlendMode: "multiply",
             }}
           />
           <g id="h3-1">
             <path d="m754.1,270.8c-9.1,15.3-28.2,45.6-38,60-4.6,3.1-20.4,7.4-25.6,8.9l-46.8,61.3c-25.8,9.4-65.6,40.6-89.2,55.6l-7.1-3c-18.2,15-47.2,22.8-68.5,20.5-9.8-6.6-45.3-31-54.9-36-26.3,17.9-45.8,32-76.1,17.6-5.8,2.2-16.6,8.4-21.7,12.7-6.4.6-19,3.9-25.1,6.5-13.7-7.2-27.7-13.3-31.5-9.4l-36.8-37.5-8.1,6.7c-24.6-11.4-37.1-14.9-54.1-43.6l-8.4,4.8c-26.5-10.4-21.1-21.5-39-31.8-10.5,4.6-25.1,12-37.8,19.3-14.4-13.7-32-38.9-41.9-58.3-16.4-6.4-30.9-30.4-40.6-47.6l-4.7,2v388.6h758.2v-397l-2.2-.2Z" />
-            <g id="dinoL" style={{ fill: "#fff", opacity: "0.2" }}>
+            <g id="dinoL" style={{ fill: "#fff", opacity: 0.2 }}>
               <path d="m47.3,488.3c1.6-.9,3.6,8.1,1.7,11-1.9,2.9.4-4.8-.6-6.6-1-1.8-3-3.2-1.1-4.4Z" />
               <path d="m43.5,487.9c2-.6,1.6,9.8-1.3,12.5-2.9,2.6,1.8-5.1,1.2-7.4-.6-2.2-2.4-4.4,0-5.1Z" />
               <path d="m39.8,488.2c2.2-.2-.2,10.8-3.8,13-3.6,2.2,2.9-5.1,2.8-7.6-.2-2.5-1.7-5.1,1-5.4Z" />
@@ -881,7 +833,7 @@ const Parallax = () => {
               <path d="m22.9,475.9c1.1-1.9-2,.3-3.4,2.3-1.4,2-2.5,3.4-1.5,4.5,1,1.1,4.5.4,4-1.1-.6-1.5,0-4.1.9-5.7Z" />
               <path d="m19.4,476.3c1.7-1.3-2-.5-4,.9s-3.6,2.2-3.1,3.6c.5,1.4,4,2.1,4.1.4,0-1.6,1.5-3.8,3-4.9Z" />
             </g>
-            <g id="dinoR" style={{ fill: "#fff", opacity: "0.2" }}>
+            <g id="dinoR" style={{ fill: "#fff", opacity: 0.2 }}>
               <path d="m716.3,456.4c-1.5.3-3.5,2.8-4.2,3-.8.2-8,0-9.1.5-1.2.5-8.9.6-9-1.9,0-2.5,2.2-.8,3.3-2.6,1.1-1.8,1.5-1.3,6.4-3.1,4.9-1.8,7.5-4,11.3-4.2,2.9,0,1.7,1.4,2.1,2.2.4.8,3.6,1.4,4,3.9.4,2.4-3.2,1.9-4.7,2.1Zm-16.8,1.2c-.3-1.1-2.2-.1-2.2-.1-1.2.9,0,1.1,0,1.1,0,0,2.5,0,2.2-1Zm13.3-5.8c-2.4,0-5.6.7-5.3,2.4.3,1.7,5.5,1.1,5.8-.4.3-1.5,1-2.1-.5-2Z" />
               <path d="m719.8,457.3c-2.2,0-5.4,3.4-7.2,3.7-1.8.4-3.2-1.4-5.9-.6-2.7.9-9.2,0-9.1,1.1,0,1.1,4.9,2.2,9.8,1.6,4.8-.6,9.7.9,10.8-.5,1.1-1.4,4-5.4,1.6-5.3Z" />
               <path d="m724.1,453.9c0-.7,1.1-.2,1.1-.2,0,0-.3-1,.2-1,.5,0,.6,1.1.6,1.1,0,0,1.4,1.1,0,3,0,0,.2,1-.4,1.2s-.5-.9-.5-.9c0,0-1.1.3-1.2-.2,0-.5.2-2.4.2-3Z" />
@@ -907,24 +859,24 @@ const Parallax = () => {
         <g id="hills1">
           <path
             id="cloudStart-L"
-            style={{ fill: "#fff", opacity: 0 }}
+            style={{ fill: "#FFFFFF", opacity: 0.3 }}
             d="m71.1,92.9c-.1,0-.3.2-.4.3-1.9-8.3-13.5-3.3-13.9,2.6.2,1.8,1.2,6.2-2.3,6.3-5.6-2.6-5.5.3-9.8,2.7-2.6-2.5-10-.6-9.9,3.4,49.8-1.3,91.9-1.8,126.3-1.6,1.4-6.6-5.5-5.8-9.2-4.5,1.5-3.2-4.1-2.8-5.5-2,.1-2.1.2-3.4-2.1-2.6,2.8-9.8-13.1-10.3-14.1-3-.6,3.2-1.2,4.8-1.8,4.8-4.5-1.5-3.8-.3-7.8.9-2.3-1.1-2.3-5.2-6.4-3.1.2.3-.3.4-.4.6,3.1-5.3,4.2-10.3-2.3-10.4-.2-23.2-37.4-15.3-30.4,6-1.9-3.8-6.7-2.5-9.8-.3m72.7,4.7h0c0,.1,0,0,0,0h0m55.6,4c2.9-9.9-15.9-8.5-12.4-.4-5.9-.7-3.4-1.7-7.4,2.1-1,.3-3-2.3-3.6-2.4-2.7.4-6.2,2.6-5.7,5.7,4.2.1,13.6,0,28.4-.3.4-1.1.6-2.7.6-4.7m12.4-1.6c-3,0-5.5,2.9-5.3,6.1,4.5-.1,9.3-.3,14.5-.4,2.5-5.4-4.8-4-6.3-3.6-1.3.3-2-2.1-3-2.1Z"
           />
           <path
             id="cloudStart-R"
-            style={{ fill: "#fff", opacity: 0 }}
+            style={{ fill: "#FFFFFF", opacity: 0.3 }}
             d="m710.3,103c0,1,1.2,1.6,2.2,1.2,17.9,1.7,6.4-8.6-2.2-1.2m-33.1-20.8c1.3-14.4-17.6-14.4-23.3-4-3.9-3.6-10.3-3-15.1.2-3.2-19-36.9-14.1-38.2,3.4-7-3.1-14.1,3.4-16.9,9.7-4.5-8.1-12.7,1.8-11.6,7.7-2.5-.5-11.8,1.6-11,6.1,42.2-1.2,102.5.2,144.8-.8,3.3-4.7-5.7-6.8-7.6-5.1-.2-4.8-4.9-8.8-9.5-5.3-.6-6.1-5.4-9.8-11.8-8.9.1-.8.2-1.8.2-2.9m53,21.7c2-2.8-6-3.4-4.2-.1.5.8,3.6.8,4.2.1Z"
           />
 
           <path
             id="cloudsBig-L"
             d="m286.9,293.2c-94.4,24-191.8,46.4-288.9,41.9v-162.1c13.2,4.6,24.7,14.5,30.1,27.5,10.1-3.4,21,1.7,28.5,9.2,19.1-13,49.9-6.4,61.2,14.2,5.8-1.7,14.9,3.6,16.4,9.5,22-21,63.1-11.5,73,17.7,10.1-4.8,22.4,4.3,20.8,15.3,21.5-7.9,51.8,3.9,58.8,26.9Z"
-            style={{ fill: "#fff", opacity: "0.5" }}
+            style={{ fill: "#FFFFFF", opacity: 0.3 }}
           />
           <path
             id="cloudsBig-R"
             d="m797.3,100.5l26.8,179.4c-163.5,24.8-334,76.2-497.6,41.2,8.7-15.6,30.8-21.9,46.5-13.3,1.3-7.7,12.5-13,19.2-8.8,2.5-36.5,49.1-57.4,76.5-31.8,6.3-8.4,19.2-12.4,29.1-8.9,5.1-12.3,18.3-19.2,29.7-12.4.7-39.5,48.9-63.5,80.9-40.4,5.1-4.6,15.4-4.4,21.2-.8,9.8-19.9,38.8-31.3,59.6-23.7,2.5-30.2,39.5-54,67.9-40.6,3.5-18.2,22.4-34.5,40.1-39.7Z"
-            style={{ fill: "#fff", opacity: "0.5" }}
+            style={{ fill: "#FFFFFF", opacity: 0.3 }}
           />
 
           <path
@@ -957,24 +909,6 @@ const Parallax = () => {
             d="M751,500V432.05c-32.59-68.73-53.56-58.59-101.56-92.59-.14-1-.27-2-.41-3a5.36,5.36,0,0,0-1.09,2.31,56.55,56.55,0,0,0-7.75-2.93c-.19-1.82-2.36-3.63-4-2.59q-.85-7-1.7-14.08a46.81,46.81,0,0,0-2.73,10.6l-1.16-3a16.62,16.62,0,0,0-.43,7.05c-1.51-.19-3-.33-4.56-.46-.51-2.46-.45-9.74-4.2-5.36a44.16,44.16,0,0,0-1.47-10.41q-2,6.86-3.95,13.71a44,44,0,0,1-3-8.83l-1.35.55a39.72,39.72,0,0,0-1.84-10.65,45.84,45.84,0,0,0-2.46,5.56l-.25-19.38c-4.16,4.58-2.3,13-3.88,18.87l-.78-8.47c-1.32,4,.82,12.1-3.16,13.94-.21-2.81-.41-5.61-.62-8.41-2,5.29.27,11.14-1.33,16.31-.93-.15-1.85-.29-2.77-.45a45.62,45.62,0,0,0-.61-12.51q-.54,6.09-1.06,12.18l-1.91-.37a11.76,11.76,0,0,0-1.77-3.29c-.07,1-.17,1.93-.28,2.89-2.83-.6-5.65-1.27-8.44-2-1.27-3.84.32-8.58-1.83-12l-2.33,9.81-2.94-4.46a8.34,8.34,0,0,1-1.43,2.51c-3.72-8.44.44-31.59-7.61-9.86a56,56,0,0,0-2.1-6.46c-2.55,9.5-4.65,1.59-8.16,7.87A27,27,0,0,0,552.5,310c-7.5,13.85-6.56-1.79-8.28-8.39-1.32,3.76-1.37,8.43-3.48,11.73l-1-.42c-.6-1.47-1-3-1.58-4.51a4.75,4.75,0,0,0-3.27,2.39l-4.28-1.92c-.37-2.95,0-6.25-2-8.82a21.06,21.06,0,0,1-1.44,7.23C477.88,273,440.32,336.09,390,328l-.24-2.24a17.27,17.27,0,0,0-.38,2.34c-.65.1-1.29.21-1.93.33a12.8,12.8,0,0,0-.56-4.29c-.12,1.36-.25,2.72-.37,4.08-2.29-.67-1.19-4.81-1.93-6.76-.15,1.37-.31,2.74-.47,4.1-.93-2.87.08-7.13-2.36-9.15l-.15,9.4a22.45,22.45,0,0,0-1.5-2.7,16.09,16.09,0,0,0-1.12,5.17l-.82-.27a18.83,18.83,0,0,1-1.62,3.93l-.28.12q-1.16-3.21-2.32-6.41a17.14,17.14,0,0,0-.89,5.05c-2.66-2.43-2.31,2.71-2.89,4.27l-.58-.55c-2.76,1.71-1.29-3-2.12-4.32l-.71,1.44a18.49,18.49,0,0,0-1.66-5.14c-.34,2.28-.68,4.55-1,6.83-4.21-.74-1.58,5.19-3,7.44l-.64.42a6.89,6.89,0,0,0-1.31-1.72l-.93,1c-1.73-1.42-.31-4.09-1.9-5.61l-.84,4.95a3.65,3.65,0,0,1-2.09-1.59c-.19.78-1.24,5.51-2.26,9.24l-8.66,5.85a65.51,65.51,0,0,1-1.3-8.18c0,2.68-2,7.92-2.88,11l-3.06,2.07c-1-3.79-2.06-7.14-2.86-7.28-.47,1.36-1.07,8.89-1.53,10.25l-1.7,1.15c-.87-4.35-1.81-9.29-2.35-11.4-.83,2-.58,8.93-.31,13.19l-5.71,3.87c-.65-2.27-1.49-5.21-2.16-5.78-.66,1.48-.89,5.65-1.27,7.23-4.69-4-3.69,5.18-7.43-5.62a53.47,53.47,0,0,0-2.09,6.46c-8.06-21.78-3.89,1.47-7.62,9.86a8.34,8.34,0,0,1-1.43-2.51L295.79,382l-2.32-9.81c-2.32,4.54-.48,10.52-2.67,15.35-12.35,7.5-87.61,76.23-133.54,112.42Z"
             fill="url(#grad6)"
           />
-          <g id="info">
-            <polygon
-              id="arrow"
-              points="353.93 368.91 356.06 366.79 374.26 385 392.47 366.79 394.59 368.91 374.26 389.24 353.93 368.91"
-              fill="#fff"
-              stroke="#231f20"
-              stroke-miterlimit="10"
-              stroke-width="0.5"
-            />
-            <path
-              id="text"
-              d="M261.62,345.74c8.46,7,22.53-4.51,8.16-9.84-17.91-5.31-3.78-24.1,9.06-16.36L277.69,323c-8.32-5.73-19.5,5.41-5.8,9.55,18.58,6.42,2.18,25.66-11.33,16.74ZM302.54,350c-23.47,10.27-23.65-31.11.1-21.64l-1,3.27c-17.3-7.88-16.61,23.5.14,15.21Zm4.94-15.11c0-2.74,0-5.09-.19-7.25H311l.14,4.56h.19c1.19-3.52,4.35-5.66,7.63-4.94v4c-10.08-1.88-6.76,14-7.29,19.63h-4.18ZM343.71,339c.06,16.73-23.06,16-22.7.39C320.43,323.17,344.34,323.23,343.71,339Zm-18.43.24c-.33,11.66,14.44,11.71,14.11-.09C340.37,327.86,324.33,327.6,325.28,339.26ZM349,316.76h4.22v34.07H349Zm11.32,0h4.23v34.07h-4.23ZM382,318.92c35.43-9.2,34.89,39.64,0,31.81Zm4.18,28.6c23.33,5.69,24.08-31.95,0-25.53ZM435,339c.06,16.73-23.06,16-22.7.39C411.73,323.17,435.64,323.23,435,339Zm-18.43.24c-.33,11.66,14.43,11.71,14.11-.09C431.67,327.86,415.63,327.6,416.58,339.26Zm25.09-11.66c1.21,4.84,3.94,14.5,4.8,19.2h.15c1-4.69,4.38-14.43,5.85-19.2H456c1.44,4.8,4.69,14.59,5.66,19.2h.15c.7-4.59,3.81-14.45,5.08-19.2h4.18l-7.49,23.23h-3.84c-1.53-5-4.6-13.66-5.61-18.72h-.1c-1,5.17-4.22,13.71-5.85,18.72h-3.84l-7-23.23Zm33.63,6.29c0-2.4,0-4.37-.19-6.29h3.75l.24,3.84h.09c14.6-14.27,17.39,7,15.88,19.39h-4.22c-1-5.08,3.26-20.32-5.37-20.25-9.13,0-5.12,15-6,20.25H475.3Z"
-              fill="#fff"
-              stroke="#231f20"
-              stroke-miterlimit="10"
-              stroke-width="0.5"
-            />
-          </g>
           <path
             id="bird"
             style={{ opacity: 0 }}
